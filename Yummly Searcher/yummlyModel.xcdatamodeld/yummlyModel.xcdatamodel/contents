@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Allergy" representedClassName="Allergy" syncable="YES">
+        <attribute name="allergyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="longDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="searchValue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shortDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Recipes" inverseName="hasAllergyFree" inverseEntity="Recipes" syncable="YES"/>
+    </entity>
+    <entity name="Ingredients" representedClassName="Ingredients" syncable="YES">
+        <attribute name="ingredient" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Recipes" inverseName="hasIngredients" inverseEntity="Recipes" syncable="YES"/>
+    </entity>
+    <entity name="Recipes" representedClassName="Recipes" syncable="YES">
+        <attribute name="recipeID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallImageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sourceDisplayName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasAllergyFree" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Allergy" inverseName="newRelationship" inverseEntity="Allergy" syncable="YES"/>
+        <relationship name="hasIngredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredients" inverseName="newRelationship" inverseEntity="Ingredients" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Allergy" positionX="-90" positionY="3" width="128" height="118"/>
+        <element name="Recipes" positionX="-279" positionY="-0" width="128" height="133"/>
+        <element name="Ingredients" positionX="-245" positionY="174" width="128" height="73"/>
+    </elements>
+</model>
