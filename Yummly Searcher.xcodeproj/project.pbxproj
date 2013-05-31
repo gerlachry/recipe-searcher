@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2AF0FB17592F8A0096B8D3 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */; };
 		0AC50282172BE6BD0054AE0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50281172BE6BD0054AE0D /* UIKit.framework */; };
 		0AC50284172BE6BD0054AE0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50283172BE6BD0054AE0D /* Foundation.framework */; };
 		0AC50286172BE6BD0054AE0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50285172BE6BD0054AE0D /* CoreGraphics.framework */; };
@@ -16,7 +17,6 @@
 		0AC50294172BE6BD0054AE0D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC50293172BE6BD0054AE0D /* Default.png */; };
 		0AC50296172BE6BD0054AE0D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC50295172BE6BD0054AE0D /* Default@2x.png */; };
 		0AC50298172BE6BD0054AE0D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC50297172BE6BD0054AE0D /* Default-568h@2x.png */; };
-		0AC5029E172BE6BD0054AE0D /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5029C172BE6BD0054AE0D /* MainStoryboard_iPad.storyboard */; };
 		0AC502AC172BE7A40054AE0D /* YummlyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC502AB172BE7A40054AE0D /* YummlyFetch.m */; };
 		0ACDB04F174E470100CBEC6F /* yummlyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB04D174E470100CBEC6F /* yummlyModel.xcdatamodeld */; };
 		0ACDB06F174F89C800CBEC6F /* Recipes+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB06E174F89C800CBEC6F /* Recipes+Create.m */; };
@@ -25,11 +25,12 @@
 		0ACDB078174F8E6200CBEC6F /* Allergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB077174F8E6200CBEC6F /* Allergy.m */; };
 		0ACDB07A174F8EF100CBEC6F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACDB079174F8EF100CBEC6F /* CoreData.framework */; };
 		0ACDB084174FB2A100CBEC6F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */; };
-		0ACDB087174FB2FA00CBEC6F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB086174FB2FA00CBEC6F /* SearchViewController.m */; };
 		0ACDB08A174FB90100CBEC6F /* Allergy+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB089174FB90100CBEC6F /* Allergy+Create.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2AF0F917592F8A0096B8D3 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ../SearchViewController.h; sourceTree = "<group>"; };
+		0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ../SearchViewController.m; sourceTree = "<group>"; };
 		0AC5027E172BE6BD0054AE0D /* Yummly Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummly Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC50281172BE6BD0054AE0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC50283172BE6BD0054AE0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,7 +44,6 @@
 		0AC50293172BE6BD0054AE0D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0AC50295172BE6BD0054AE0D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0AC50297172BE6BD0054AE0D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		0AC5029D172BE6BD0054AE0D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		0AC502A7172BE6EE0054AE0D /* YummlyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YummlyAPI.h; sourceTree = "<group>"; };
 		0AC502AA172BE7A40054AE0D /* YummlyFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YummlyFetch.h; sourceTree = "<group>"; };
 		0AC502AB172BE7A40054AE0D /* YummlyFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YummlyFetch.m; sourceTree = "<group>"; };
@@ -60,8 +60,6 @@
 		0ACDB07B174F91A900CBEC6F /* CoreDataTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		0ACDB07C174F91A900CBEC6F /* CoreDataTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		0ACDB085174FB2FA00CBEC6F /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		0ACDB086174FB2FA00CBEC6F /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		0ACDB088174FB90100CBEC6F /* Allergy+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Allergy+Create.h"; sourceTree = "<group>"; };
 		0ACDB089174FB90100CBEC6F /* Allergy+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Allergy+Create.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,14 +110,13 @@
 		0AC50287172BE6BD0054AE0D /* Yummly Searcher */ = {
 			isa = PBXGroup;
 			children = (
+				0A2AF0F917592F8A0096B8D3 /* SearchViewController.h */,
+				0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */,
 				0ACDB04C174E46E900CBEC6F /* CoreData */,
 				0AC502AD172BE7B10054AE0D /* Yummly */,
 				0AC50290172BE6BD0054AE0D /* AppDelegate.h */,
 				0AC50291172BE6BD0054AE0D /* AppDelegate.m */,
-				0AC5029C172BE6BD0054AE0D /* MainStoryboard_iPad.storyboard */,
 				0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */,
-				0ACDB085174FB2FA00CBEC6F /* SearchViewController.h */,
-				0ACDB086174FB2FA00CBEC6F /* SearchViewController.m */,
 				0AC50288172BE6BD0054AE0D /* Supporting Files */,
 			);
 			path = "Yummly Searcher";
@@ -240,7 +237,6 @@
 				0AC50294172BE6BD0054AE0D /* Default.png in Resources */,
 				0AC50296172BE6BD0054AE0D /* Default@2x.png in Resources */,
 				0AC50298172BE6BD0054AE0D /* Default-568h@2x.png in Resources */,
-				0AC5029E172BE6BD0054AE0D /* MainStoryboard_iPad.storyboard in Resources */,
 				0ACDB084174FB2A100CBEC6F /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,8 +256,8 @@
 				0ACDB072174F8E6100CBEC6F /* Ingredients.m in Sources */,
 				0ACDB075174F8E6200CBEC6F /* Recipes.m in Sources */,
 				0ACDB078174F8E6200CBEC6F /* Allergy.m in Sources */,
-				0ACDB087174FB2FA00CBEC6F /* SearchViewController.m in Sources */,
 				0ACDB08A174FB90100CBEC6F /* Allergy+Create.m in Sources */,
+				0A2AF0FB17592F8A0096B8D3 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,14 +270,6 @@
 				0AC5028B172BE6BD0054AE0D /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0AC5029C172BE6BD0054AE0D /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0AC5029D172BE6BD0054AE0D /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
