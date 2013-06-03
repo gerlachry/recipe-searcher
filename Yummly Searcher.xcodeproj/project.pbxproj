@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A123F10175CB91D00D4AF2D /* AllergenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A123F0F175CB91D00D4AF2D /* AllergenCell.m */; };
 		0A2AF0FB17592F8A0096B8D3 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */; };
 		0AC50282172BE6BD0054AE0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50281172BE6BD0054AE0D /* UIKit.framework */; };
 		0AC50284172BE6BD0054AE0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50283172BE6BD0054AE0D /* Foundation.framework */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A123F0E175CB91D00D4AF2D /* AllergenCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllergenCell.h; sourceTree = "<group>"; };
+		0A123F0F175CB91D00D4AF2D /* AllergenCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllergenCell.m; sourceTree = "<group>"; };
 		0A2AF0F917592F8A0096B8D3 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = "Yummly Searcher/SearchViewController.h"; sourceTree = SOURCE_ROOT; };
 		0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		0AC5027E172BE6BD0054AE0D /* Yummly Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummly Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +115,8 @@
 			children = (
 				0A2AF0F917592F8A0096B8D3 /* SearchViewController.h */,
 				0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */,
+				0A123F0E175CB91D00D4AF2D /* AllergenCell.h */,
+				0A123F0F175CB91D00D4AF2D /* AllergenCell.m */,
 				0ACDB04C174E46E900CBEC6F /* CoreData */,
 				0AC502AD172BE7B10054AE0D /* Yummly */,
 				0AC50290172BE6BD0054AE0D /* AppDelegate.h */,
@@ -258,6 +263,7 @@
 				0ACDB078174F8E6200CBEC6F /* Allergy.m in Sources */,
 				0ACDB08A174FB90100CBEC6F /* Allergy+Create.m in Sources */,
 				0A2AF0FB17592F8A0096B8D3 /* SearchViewController.m in Sources */,
+				0A123F10175CB91D00D4AF2D /* AllergenCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
