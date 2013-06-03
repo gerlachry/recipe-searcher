@@ -18,6 +18,9 @@
 #define YUMMLY_SOURCE_DISPLAY_NAME @"sourceDisplayName"
 #define YUMMLY_ALLERGY_LONG @"longDescription"
 #define YUMMLY_ALLERGY_ID @"id"
+#define YUMMLY_ALLERGY_SWITCH @"switch"
+#define YUMMLY_ALLERGY_SWITCH_ON @"ON"
+#define YUMMLY_ALLERGY_SWITCH_OFF @"OFF"
 
 @interface YummlyFetch : NSObject
 

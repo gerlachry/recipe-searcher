@@ -18,6 +18,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        self.allergenLabel.text = nil;
+        self.allergenSwitch.on = NO;
     }
     return self;
 }
@@ -27,6 +29,15 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)prepareForReuse
+{
+    [super prepareForReuse];
+    
+    self.allergenLabel = nil;
+    self.allergenSwitch.on = NO;
+    
 }
 
 @end
