@@ -16,6 +16,11 @@
 #define YUMMLY_RECIPE_NAME @"recipeName"
 #define YUMMLY_SMALL_IMAGE_URL @"smallImageUrls"
 #define YUMMLY_SOURCE_DISPLAY_NAME @"sourceDisplayName"
+
+//this is the value needed by yummly api when searching by allergen
+#define YUMMLY_ALLERGY_SEARCH_VALUE @"searchValue"
+
+//used in search view display
 #define YUMMLY_ALLERGY_LONG @"longDescription"
 #define YUMMLY_ALLERGY_ID @"id"
 #define YUMMLY_ALLERGY_SWITCH @"switch"

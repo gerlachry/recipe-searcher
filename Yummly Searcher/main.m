@@ -13,7 +13,7 @@
 
 int main(int argc, char *argv[])
 {
-    
+    //testing the yummly search api format
     //NSLog(@"yummly allergy searchValues = %@", [YummlyFetch allergySearchValues]);
     
     //NSLog(@"yummly response = %@",[YummlyFetch topRecipesForSearch:@"french bread&allowedAllergy[]=393^Gluten-Free"]);
