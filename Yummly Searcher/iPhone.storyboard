@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Search View Controller - Find Recipes-->
         <scene sceneID="xJI-P8-Efj">
             <objects>
                 <tableViewController id="i5F-di-Jct" customClass="SearchViewController" sceneMemberID="viewController">
@@ -50,7 +50,14 @@
                             <outlet property="delegate" destination="i5F-di-Jct" id="IBh-4N-Gdi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2Gf-oI-wGJ"/>
+                    <navigationItem key="navigationItem" title="Find Recipes" id="2Gf-oI-wGJ">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="T6G-NI-1wG"/>
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="n5j-r8-Qh6">
+                            <connections>
+                                <action selector="searchPressed:" destination="i5F-di-Jct" id="lxa-Sf-6Ml"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CvV-Cg-QWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,6 +92,10 @@
         </class>
         <class className="SearchViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
