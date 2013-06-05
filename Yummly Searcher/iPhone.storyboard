@@ -16,6 +16,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="i5F-di-Jct" id="qwE-sd-1hh"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Allergen Cell" id="SXk-3z-l8t" customClass="AllergenCell">
@@ -52,12 +59,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Find Recipes" id="2Gf-oI-wGJ">
                         <barButtonItem key="leftBarButtonItem" title="Clear" id="T6G-NI-1wG"/>
-                        <barButtonItem key="rightBarButtonItem" title="Search" id="n5j-r8-Qh6">
-                            <connections>
-                                <action selector="searchPressed:" destination="i5F-di-Jct" id="lxa-Sf-6Ml"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="fes-hn-YSF" id="h85-5z-DUv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CvV-Cg-QWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,8 +98,7 @@
         <class className="SearchViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
             <relationships>
-                <relationship kind="action" name="searchPressed:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
     </classes>
