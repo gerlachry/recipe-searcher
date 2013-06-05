@@ -34,7 +34,6 @@
 -(void)prepareForReuse
 {
     [super prepareForReuse];
-    
     self.allergenLabel = nil;
     self.allergenSwitch.on = NO;
     
