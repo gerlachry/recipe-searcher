@@ -11,4 +11,6 @@
 
 @interface SearchResultsTableViewController : CoreDataTableViewController
 
+@property (nonatomic, strong) NSString *searchString; //search string to fetch from Yummly
+
 @end

@@ -14,6 +14,8 @@
 
 @implementation SearchResultsTableViewController
 
+@synthesize searchString = _searchString;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];

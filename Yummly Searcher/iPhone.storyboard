@@ -63,6 +63,11 @@
                                 <action selector="clearPressed:" destination="i5F-di-Jct" id="23n-WT-07a"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Recent" id="Pdl-mn-cZ4">
+                            <connections>
+                                <segue destination="msd-XN-XNZ" kind="push" identifier="Recent Recipe Segue" id="6st-qn-ZCy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="fes-hn-YSF" id="h85-5z-DUv"/>
@@ -72,6 +77,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CvV-Cg-QWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="563" y="-263"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="YJE-7K-zlv">
+            <objects>
+                <tableViewController id="msd-XN-XNZ" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="STk-om-sPt">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AW4-kc-Bvz">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="msd-XN-XNZ" id="2am-2W-cbf"/>
+                            <outlet property="delegate" destination="msd-XN-XNZ" id="Eui-Fk-pBh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ccH-2v-Liq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTK-rQ-k2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="875" y="-945"/>
         </scene>
         <!--Search Results Table View Controller - Recipes-->
         <scene sceneID="YFo-Hb-g6I">
@@ -146,13 +181,15 @@
                 <relationship kind="outlet" name="allergenSwitch" candidateClass="UISwitch"/>
             </relationships>
         </class>
-        <class className="SearchResultsTableViewController" superclassName="UITableViewController">
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="SearchResultsTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultsTableViewController.h"/>
         </class>
         <class className="SearchViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
             <relationships>
-                <relationship kind="action" name="clearPressed:"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>

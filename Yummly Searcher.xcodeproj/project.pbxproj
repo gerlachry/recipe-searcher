@@ -27,6 +27,7 @@
 		0AD4027F176211A2007BAA7C /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4027E176211A2007BAA7C /* Search.m */; };
 		0AD40282176211A2007BAA7C /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD40281176211A2007BAA7C /* Recipes.m */; };
 		0AD4028517621208007BAA7C /* RecipeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4028417621208007BAA7C /* RecipeHelper.m */; };
+		0AD4028817621CCE007BAA7C /* RecentSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4028717621CCE007BAA7C /* RecentSearchTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,8 @@
 		0AD40281176211A2007BAA7C /* Recipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipes.m; sourceTree = "<group>"; };
 		0AD4028317621208007BAA7C /* RecipeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeHelper.h; sourceTree = "<group>"; };
 		0AD4028417621208007BAA7C /* RecipeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeHelper.m; sourceTree = "<group>"; };
+		0AD4028617621CCE007BAA7C /* RecentSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentSearchTableViewController.h; sourceTree = "<group>"; };
+		0AD4028717621CCE007BAA7C /* RecentSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentSearchTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 		0A638A4B1761FA1900658A62 /* TableControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0AD4028617621CCE007BAA7C /* RecentSearchTableViewController.h */,
+				0AD4028717621CCE007BAA7C /* RecentSearchTableViewController.m */,
 				0A638A481761F79600658A62 /* SearchResultsTableViewController.h */,
 				0A638A491761F79600658A62 /* SearchResultsTableViewController.m */,
 				0A2AF0F917592F8A0096B8D3 /* SearchViewController.h */,
@@ -268,6 +273,7 @@
 				0AD4027F176211A2007BAA7C /* Search.m in Sources */,
 				0AD40282176211A2007BAA7C /* Recipes.m in Sources */,
 				0AD4028517621208007BAA7C /* RecipeHelper.m in Sources */,
+				0AD4028817621CCE007BAA7C /* RecentSearchTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
