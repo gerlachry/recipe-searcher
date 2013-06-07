@@ -31,7 +31,8 @@ static UIManagedDocument *recipeDatabase;
 
 +(NSString *)getCurrentDatabase
 {
-    NSString *current = nil;
+    NSString *current = [recipeDatabase.fileURL lastPathComponent];
+    if(!current) current = DEFAULT_RECIPE_DB_NAME;
     return current;
     
 }
@@ -65,7 +66,7 @@ static UIManagedDocument *recipeDatabase;
           usingBlock:(completion_block_t)completionBlock
 {
     //only have one database for now, reusing code from class
-    
+    NSLog(@"recipeDatabase = %@", recipeDatabase);
     if([recipeDBName isEqualToString:[recipeDatabase.fileURL lastPathComponent]]){
         //use current vacation
         NSLog(@"using current");

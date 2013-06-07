@@ -28,6 +28,7 @@
 		0AD40282176211A2007BAA7C /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD40281176211A2007BAA7C /* Recipes.m */; };
 		0AD4028517621208007BAA7C /* RecipeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4028417621208007BAA7C /* RecipeHelper.m */; };
 		0AD4028817621CCE007BAA7C /* RecentSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4028717621CCE007BAA7C /* RecentSearchTableViewController.m */; };
+		0AD883061762689200280054 /* Search+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD883051762689200280054 /* Search+Manage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,8 @@
 		0AD4028417621208007BAA7C /* RecipeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeHelper.m; sourceTree = "<group>"; };
 		0AD4028617621CCE007BAA7C /* RecentSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentSearchTableViewController.h; sourceTree = "<group>"; };
 		0AD4028717621CCE007BAA7C /* RecentSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentSearchTableViewController.m; sourceTree = "<group>"; };
+		0AD883041762689200280054 /* Search+Manage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Search+Manage.h"; sourceTree = "<group>"; };
+		0AD883051762689200280054 /* Search+Manage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Search+Manage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 		0ACDB06C174F898B00CBEC6F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				0AD883041762689200280054 /* Search+Manage.h */,
+				0AD883051762689200280054 /* Search+Manage.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				0AD40282176211A2007BAA7C /* Recipes.m in Sources */,
 				0AD4028517621208007BAA7C /* RecipeHelper.m in Sources */,
 				0AD4028817621CCE007BAA7C /* RecentSearchTableViewController.m in Sources */,
+				0AD883061762689200280054 /* Search+Manage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
