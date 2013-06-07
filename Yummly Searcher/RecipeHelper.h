@@ -20,7 +20,7 @@ typedef void (^completion_block_t) (UIManagedDocument *recipeDB);
 +(NSString *)getCurrentDatabase;  //returns current open database
 
 //the uimanageddocument to use for all coredata related recipe activities
-// for now will only be one database
+// for now will only be one database, reusing code from class hence logic for multiple databases
 +(void) openRecipeDB:(NSString *)recipeDBName
           usingBlock:(completion_block_t)completionBlock;
 
