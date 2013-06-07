@@ -11,6 +11,8 @@
 
 #define YUMMLY_SEARCH_URL @"http://api.yummly.com/v1/api/recipes?_"
 #define YUMMLY_ALLERGY_URL @"http://api.yummly.com/v1/api/metadata/allergy?_"
+//need to add constant for the recipe base url
+#define YUMMLY_SEARCH_MAX_RESULTS 100;
 #define YUMMLY_ID @"id"
 #define YUMMLY_INGREDIENTS @"ingredients"
 #define YUMMLY_RECIPE_NAME @"recipeName"

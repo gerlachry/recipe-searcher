@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A123F10175CB91D00D4AF2D /* AllergenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A123F0F175CB91D00D4AF2D /* AllergenCell.m */; };
 		0A2AF0FB17592F8A0096B8D3 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */; };
+		0A638A4A1761F79600658A62 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A638A491761F79600658A62 /* SearchResultsTableViewController.m */; };
+		0A638A4E1761FF3600658A62 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A638A4D1761FF3600658A62 /* CoreDataTableViewController.m */; };
 		0AC50282172BE6BD0054AE0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50281172BE6BD0054AE0D /* UIKit.framework */; };
 		0AC50284172BE6BD0054AE0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50283172BE6BD0054AE0D /* Foundation.framework */; };
 		0AC50286172BE6BD0054AE0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50285172BE6BD0054AE0D /* CoreGraphics.framework */; };
@@ -34,6 +36,10 @@
 		0A123F0F175CB91D00D4AF2D /* AllergenCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllergenCell.m; sourceTree = "<group>"; };
 		0A2AF0F917592F8A0096B8D3 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = "Yummly Searcher/SearchViewController.h"; sourceTree = SOURCE_ROOT; };
 		0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		0A638A481761F79600658A62 /* SearchResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTableViewController.h; sourceTree = "<group>"; };
+		0A638A491761F79600658A62 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
+		0A638A4C1761FF3600658A62 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		0A638A4D1761FF3600658A62 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		0AC5027E172BE6BD0054AE0D /* Yummly Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummly Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC50281172BE6BD0054AE0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC50283172BE6BD0054AE0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,8 +66,6 @@
 		0ACDB076174F8E6200CBEC6F /* Allergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Allergy.h; sourceTree = "<group>"; };
 		0ACDB077174F8E6200CBEC6F /* Allergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Allergy.m; sourceTree = "<group>"; };
 		0ACDB079174F8EF100CBEC6F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		0ACDB07B174F91A900CBEC6F /* CoreDataTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
-		0ACDB07C174F91A900CBEC6F /* CoreDataTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		0ACDB088174FB90100CBEC6F /* Allergy+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Allergy+Create.h"; sourceTree = "<group>"; };
 		0ACDB089174FB90100CBEC6F /* Allergy+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Allergy+Create.m"; sourceTree = "<group>"; };
@@ -82,6 +86,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A638A4B1761FA1900658A62 /* TableControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A638A481761F79600658A62 /* SearchResultsTableViewController.h */,
+				0A638A491761F79600658A62 /* SearchResultsTableViewController.m */,
+				0A2AF0F917592F8A0096B8D3 /* SearchViewController.h */,
+				0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */,
+			);
+			name = TableControllers;
+			sourceTree = "<group>";
+		};
 		0AC50275172BE6BD0054AE0D = {
 			isa = PBXGroup;
 			children = (
@@ -113,12 +128,11 @@
 		0AC50287172BE6BD0054AE0D /* Yummly Searcher */ = {
 			isa = PBXGroup;
 			children = (
-				0A2AF0F917592F8A0096B8D3 /* SearchViewController.h */,
-				0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */,
-				0A123F0E175CB91D00D4AF2D /* AllergenCell.h */,
-				0A123F0F175CB91D00D4AF2D /* AllergenCell.m */,
 				0ACDB04C174E46E900CBEC6F /* CoreData */,
 				0AC502AD172BE7B10054AE0D /* Yummly */,
+				0A638A4B1761FA1900658A62 /* TableControllers */,
+				0A123F0E175CB91D00D4AF2D /* AllergenCell.h */,
+				0A123F0F175CB91D00D4AF2D /* AllergenCell.m */,
 				0AC50290172BE6BD0054AE0D /* AppDelegate.h */,
 				0AC50291172BE6BD0054AE0D /* AppDelegate.m */,
 				0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */,
@@ -154,8 +168,8 @@
 		0ACDB04C174E46E900CBEC6F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				0ACDB07B174F91A900CBEC6F /* CoreDataTableViewController.h */,
-				0ACDB07C174F91A900CBEC6F /* CoreDataTableViewController.m */,
+				0A638A4C1761FF3600658A62 /* CoreDataTableViewController.h */,
+				0A638A4D1761FF3600658A62 /* CoreDataTableViewController.m */,
 				0ACDB06C174F898B00CBEC6F /* Categories */,
 				0ACDB06B174F898400CBEC6F /* Tables */,
 				0ACDB04D174E470100CBEC6F /* yummlyModel.xcdatamodeld */,
@@ -264,6 +278,8 @@
 				0ACDB08A174FB90100CBEC6F /* Allergy+Create.m in Sources */,
 				0A2AF0FB17592F8A0096B8D3 /* SearchViewController.m in Sources */,
 				0A123F10175CB91D00D4AF2D /* AllergenCell.m in Sources */,
+				0A638A4A1761F79600658A62 /* SearchResultsTableViewController.m in Sources */,
+				0A638A4E1761FF3600658A62 /* CoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

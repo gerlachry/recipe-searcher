@@ -14,7 +14,7 @@
 // Remember that once you create an NSFetchedResultsController, you CANNOT modify its @propertys.
 // If you want new fetch parameters (predicate, sorting, etc.),
 //  create a NEW NSFetchedResultsController and set this class's fetchedResultsController @property again.
-//  
+//
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
