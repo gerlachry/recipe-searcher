@@ -9,7 +9,7 @@
         <attribute name="sourceDisplayName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="newRelationship" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Search" inverseName="hasRecipes" inverseEntity="Search" syncable="YES"/>
     </entity>
-    <entity name="Search" syncable="YES">
+    <entity name="Search" representedClassName="Search" syncable="YES">
         <attribute name="searchID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="searchString" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="hasRecipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipes" inverseName="newRelationship" inverseEntity="Recipes" syncable="YES"/>

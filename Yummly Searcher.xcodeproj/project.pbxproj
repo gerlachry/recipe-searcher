@@ -22,13 +22,11 @@
 		0AC50298172BE6BD0054AE0D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC50297172BE6BD0054AE0D /* Default-568h@2x.png */; };
 		0AC502AC172BE7A40054AE0D /* YummlyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC502AB172BE7A40054AE0D /* YummlyFetch.m */; };
 		0ACDB04F174E470100CBEC6F /* yummlyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB04D174E470100CBEC6F /* yummlyModel.xcdatamodeld */; };
-		0ACDB06F174F89C800CBEC6F /* Recipes+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB06E174F89C800CBEC6F /* Recipes+Create.m */; };
-		0ACDB072174F8E6100CBEC6F /* Ingredients.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB071174F8E6100CBEC6F /* Ingredients.m */; };
-		0ACDB075174F8E6200CBEC6F /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB074174F8E6200CBEC6F /* Recipes.m */; };
-		0ACDB078174F8E6200CBEC6F /* Allergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB077174F8E6200CBEC6F /* Allergy.m */; };
 		0ACDB07A174F8EF100CBEC6F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACDB079174F8EF100CBEC6F /* CoreData.framework */; };
 		0ACDB084174FB2A100CBEC6F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */; };
-		0ACDB08A174FB90100CBEC6F /* Allergy+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB089174FB90100CBEC6F /* Allergy+Create.m */; };
+		0AD4027F176211A2007BAA7C /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4027E176211A2007BAA7C /* Search.m */; };
+		0AD40282176211A2007BAA7C /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD40281176211A2007BAA7C /* Recipes.m */; };
+		0AD4028517621208007BAA7C /* RecipeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4028417621208007BAA7C /* RecipeHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,18 +55,14 @@
 		0AC502AA172BE7A40054AE0D /* YummlyFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YummlyFetch.h; sourceTree = "<group>"; };
 		0AC502AB172BE7A40054AE0D /* YummlyFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YummlyFetch.m; sourceTree = "<group>"; };
 		0ACDB04E174E470100CBEC6F /* yummlyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = yummlyModel.xcdatamodel; sourceTree = "<group>"; };
-		0ACDB06D174F89C800CBEC6F /* Recipes+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recipes+Create.h"; sourceTree = "<group>"; };
-		0ACDB06E174F89C800CBEC6F /* Recipes+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recipes+Create.m"; sourceTree = "<group>"; };
-		0ACDB070174F8E6100CBEC6F /* Ingredients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredients.h; sourceTree = "<group>"; };
-		0ACDB071174F8E6100CBEC6F /* Ingredients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingredients.m; sourceTree = "<group>"; };
-		0ACDB073174F8E6200CBEC6F /* Recipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipes.h; sourceTree = "<group>"; };
-		0ACDB074174F8E6200CBEC6F /* Recipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipes.m; sourceTree = "<group>"; };
-		0ACDB076174F8E6200CBEC6F /* Allergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Allergy.h; sourceTree = "<group>"; };
-		0ACDB077174F8E6200CBEC6F /* Allergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Allergy.m; sourceTree = "<group>"; };
 		0ACDB079174F8EF100CBEC6F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		0ACDB088174FB90100CBEC6F /* Allergy+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Allergy+Create.h"; sourceTree = "<group>"; };
-		0ACDB089174FB90100CBEC6F /* Allergy+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Allergy+Create.m"; sourceTree = "<group>"; };
+		0AD4027D176211A2007BAA7C /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
+		0AD4027E176211A2007BAA7C /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
+		0AD40280176211A2007BAA7C /* Recipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipes.h; sourceTree = "<group>"; };
+		0AD40281176211A2007BAA7C /* Recipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipes.m; sourceTree = "<group>"; };
+		0AD4028317621208007BAA7C /* RecipeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeHelper.h; sourceTree = "<group>"; };
+		0AD4028417621208007BAA7C /* RecipeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +162,8 @@
 		0ACDB04C174E46E900CBEC6F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				0AD4028317621208007BAA7C /* RecipeHelper.h */,
+				0AD4028417621208007BAA7C /* RecipeHelper.m */,
 				0A638A4C1761FF3600658A62 /* CoreDataTableViewController.h */,
 				0A638A4D1761FF3600658A62 /* CoreDataTableViewController.m */,
 				0ACDB06C174F898B00CBEC6F /* Categories */,
@@ -180,12 +176,10 @@
 		0ACDB06B174F898400CBEC6F /* Tables */ = {
 			isa = PBXGroup;
 			children = (
-				0ACDB076174F8E6200CBEC6F /* Allergy.h */,
-				0ACDB077174F8E6200CBEC6F /* Allergy.m */,
-				0ACDB073174F8E6200CBEC6F /* Recipes.h */,
-				0ACDB074174F8E6200CBEC6F /* Recipes.m */,
-				0ACDB070174F8E6100CBEC6F /* Ingredients.h */,
-				0ACDB071174F8E6100CBEC6F /* Ingredients.m */,
+				0AD40280176211A2007BAA7C /* Recipes.h */,
+				0AD40281176211A2007BAA7C /* Recipes.m */,
+				0AD4027D176211A2007BAA7C /* Search.h */,
+				0AD4027E176211A2007BAA7C /* Search.m */,
 			);
 			name = Tables;
 			sourceTree = "<group>";
@@ -193,10 +187,6 @@
 		0ACDB06C174F898B00CBEC6F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				0ACDB06D174F89C800CBEC6F /* Recipes+Create.h */,
-				0ACDB06E174F89C800CBEC6F /* Recipes+Create.m */,
-				0ACDB088174FB90100CBEC6F /* Allergy+Create.h */,
-				0ACDB089174FB90100CBEC6F /* Allergy+Create.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -271,15 +261,13 @@
 				0AC50292172BE6BD0054AE0D /* AppDelegate.m in Sources */,
 				0AC502AC172BE7A40054AE0D /* YummlyFetch.m in Sources */,
 				0ACDB04F174E470100CBEC6F /* yummlyModel.xcdatamodeld in Sources */,
-				0ACDB06F174F89C800CBEC6F /* Recipes+Create.m in Sources */,
-				0ACDB072174F8E6100CBEC6F /* Ingredients.m in Sources */,
-				0ACDB075174F8E6200CBEC6F /* Recipes.m in Sources */,
-				0ACDB078174F8E6200CBEC6F /* Allergy.m in Sources */,
-				0ACDB08A174FB90100CBEC6F /* Allergy+Create.m in Sources */,
 				0A2AF0FB17592F8A0096B8D3 /* SearchViewController.m in Sources */,
 				0A123F10175CB91D00D4AF2D /* AllergenCell.m in Sources */,
 				0A638A4A1761F79600658A62 /* SearchResultsTableViewController.m in Sources */,
 				0A638A4E1761FF3600658A62 /* CoreDataTableViewController.m in Sources */,
+				0AD4027F176211A2007BAA7C /* Search.m in Sources */,
+				0AD40282176211A2007BAA7C /* Recipes.m in Sources */,
+				0AD4028517621208007BAA7C /* RecipeHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
