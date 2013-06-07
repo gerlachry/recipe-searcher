@@ -58,7 +58,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Find Recipes" id="2Gf-oI-wGJ">
-                        <barButtonItem key="leftBarButtonItem" title="Clear" id="T6G-NI-1wG"/>
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="T6G-NI-1wG">
+                            <connections>
+                                <action selector="clearPressed:" destination="i5F-di-Jct" id="23n-WT-07a"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="fes-hn-YSF" id="h85-5z-DUv"/>
@@ -98,6 +102,7 @@
         <class className="SearchViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clearPressed:"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
