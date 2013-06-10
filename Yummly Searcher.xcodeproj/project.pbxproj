@@ -24,11 +24,12 @@
 		0ACDB04F174E470100CBEC6F /* yummlyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDB04D174E470100CBEC6F /* yummlyModel.xcdatamodeld */; };
 		0ACDB07A174F8EF100CBEC6F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACDB079174F8EF100CBEC6F /* CoreData.framework */; };
 		0ACDB084174FB2A100CBEC6F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */; };
-		0AD4027F176211A2007BAA7C /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4027E176211A2007BAA7C /* Search.m */; };
-		0AD40282176211A2007BAA7C /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD40281176211A2007BAA7C /* Recipes.m */; };
 		0AD4028517621208007BAA7C /* RecipeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4028417621208007BAA7C /* RecipeHelper.m */; };
 		0AD4028817621CCE007BAA7C /* RecentSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4028717621CCE007BAA7C /* RecentSearchTableViewController.m */; };
 		0AD883061762689200280054 /* Search+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD883051762689200280054 /* Search+Manage.m */; };
+		0AD883091763C3EB00280054 /* Recipes+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD883081763C3EB00280054 /* Recipes+Manage.m */; };
+		0AD8831217640AEB00280054 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8831117640AEB00280054 /* Search.m */; };
+		0AD8831517640AEC00280054 /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8831417640AEC00280054 /* Recipes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,16 +60,18 @@
 		0ACDB04E174E470100CBEC6F /* yummlyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = yummlyModel.xcdatamodel; sourceTree = "<group>"; };
 		0ACDB079174F8EF100CBEC6F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		0AD4027D176211A2007BAA7C /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
-		0AD4027E176211A2007BAA7C /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
-		0AD40280176211A2007BAA7C /* Recipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipes.h; sourceTree = "<group>"; };
-		0AD40281176211A2007BAA7C /* Recipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipes.m; sourceTree = "<group>"; };
 		0AD4028317621208007BAA7C /* RecipeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeHelper.h; sourceTree = "<group>"; };
 		0AD4028417621208007BAA7C /* RecipeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeHelper.m; sourceTree = "<group>"; };
 		0AD4028617621CCE007BAA7C /* RecentSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentSearchTableViewController.h; sourceTree = "<group>"; };
 		0AD4028717621CCE007BAA7C /* RecentSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentSearchTableViewController.m; sourceTree = "<group>"; };
 		0AD883041762689200280054 /* Search+Manage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Search+Manage.h"; sourceTree = "<group>"; };
 		0AD883051762689200280054 /* Search+Manage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Search+Manage.m"; sourceTree = "<group>"; };
+		0AD883071763C3EB00280054 /* Recipes+Manage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recipes+Manage.h"; sourceTree = "<group>"; };
+		0AD883081763C3EB00280054 /* Recipes+Manage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recipes+Manage.m"; sourceTree = "<group>"; };
+		0AD8831017640AEB00280054 /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
+		0AD8831117640AEB00280054 /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
+		0AD8831317640AEC00280054 /* Recipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipes.h; sourceTree = "<group>"; };
+		0AD8831417640AEC00280054 /* Recipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,10 +187,10 @@
 		0ACDB06B174F898400CBEC6F /* Tables */ = {
 			isa = PBXGroup;
 			children = (
-				0AD40280176211A2007BAA7C /* Recipes.h */,
-				0AD40281176211A2007BAA7C /* Recipes.m */,
-				0AD4027D176211A2007BAA7C /* Search.h */,
-				0AD4027E176211A2007BAA7C /* Search.m */,
+				0AD8831317640AEC00280054 /* Recipes.h */,
+				0AD8831417640AEC00280054 /* Recipes.m */,
+				0AD8831017640AEB00280054 /* Search.h */,
+				0AD8831117640AEB00280054 /* Search.m */,
 			);
 			name = Tables;
 			sourceTree = "<group>";
@@ -197,6 +200,8 @@
 			children = (
 				0AD883041762689200280054 /* Search+Manage.h */,
 				0AD883051762689200280054 /* Search+Manage.m */,
+				0AD883071763C3EB00280054 /* Recipes+Manage.h */,
+				0AD883081763C3EB00280054 /* Recipes+Manage.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -275,11 +280,12 @@
 				0A123F10175CB91D00D4AF2D /* AllergenCell.m in Sources */,
 				0A638A4A1761F79600658A62 /* SearchResultsTableViewController.m in Sources */,
 				0A638A4E1761FF3600658A62 /* CoreDataTableViewController.m in Sources */,
-				0AD4027F176211A2007BAA7C /* Search.m in Sources */,
-				0AD40282176211A2007BAA7C /* Recipes.m in Sources */,
 				0AD4028517621208007BAA7C /* RecipeHelper.m in Sources */,
 				0AD4028817621CCE007BAA7C /* RecentSearchTableViewController.m in Sources */,
 				0AD883061762689200280054 /* Search+Manage.m in Sources */,
+				0AD883091763C3EB00280054 /* Recipes+Manage.m in Sources */,
+				0AD8831217640AEB00280054 /* Search.m in Sources */,
+				0AD8831517640AEC00280054 /* Recipes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
