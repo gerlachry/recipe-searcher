@@ -11,6 +11,7 @@
 @interface Recipes (Manage)
 
 +(Recipes *)recipesWithYummlyInfo:(NSDictionary *)recipe
-                 inManagedContext:(NSManagedObjectContext *)context;
+                  forSearchString:(NSString *)searchString
+                 inManagedContext:(NSManagedObjectContext *)context;//add new recipes from search results
 
 @end

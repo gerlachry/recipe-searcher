@@ -53,6 +53,7 @@ static UIManagedDocument *recipeDatabase;
     } else if(database.documentState == UIDocumentStateClosed){
         [database openWithCompletionHandler:^(BOOL success){
             recipeDatabase = database;
+            NSLog(@"open database %@", recipeDatabase);
             completionBlock(recipeDatabase);
         }];
     } else if(database.documentState == UIDocumentStateNormal){

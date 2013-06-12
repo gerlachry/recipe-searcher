@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Recipes" representedClassName="Recipes" syncable="YES">
         <attribute name="course" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cuisine" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,11 +7,11 @@
         <attribute name="recipeName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="smallImageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sourceDisplayName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Search" inverseName="hasRecipes" inverseEntity="Search" syncable="YES"/>
+        <relationship name="hasSearches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Search" inverseName="hasRecipes" inverseEntity="Search" syncable="YES"/>
     </entity>
     <entity name="Search" representedClassName="Search" syncable="YES">
         <attribute name="searchString" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="hasRecipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipes" inverseName="newRelationship" inverseEntity="Recipes" syncable="YES"/>
+        <relationship name="hasRecipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipes" inverseName="hasSearches" inverseEntity="Recipes" syncable="YES"/>
     </entity>
     <elements>
         <element name="Recipes" positionX="-353" positionY="-124" width="128" height="148"/>

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A123F10175CB91D00D4AF2D /* AllergenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A123F0F175CB91D00D4AF2D /* AllergenCell.m */; };
 		0A2AF0FB17592F8A0096B8D3 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */; };
+		0A300C021767FD8200057CE9 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A300C011767FD8200057CE9 /* Search.m */; };
+		0A300C051767FD8200057CE9 /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A300C041767FD8200057CE9 /* Recipes.m */; };
 		0A638A4A1761F79600658A62 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A638A491761F79600658A62 /* SearchResultsTableViewController.m */; };
 		0A638A4E1761FF3600658A62 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A638A4D1761FF3600658A62 /* CoreDataTableViewController.m */; };
 		0AC50282172BE6BD0054AE0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50281172BE6BD0054AE0D /* UIKit.framework */; };
@@ -28,8 +30,6 @@
 		0AD4028817621CCE007BAA7C /* RecentSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4028717621CCE007BAA7C /* RecentSearchTableViewController.m */; };
 		0AD883061762689200280054 /* Search+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD883051762689200280054 /* Search+Manage.m */; };
 		0AD883091763C3EB00280054 /* Recipes+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD883081763C3EB00280054 /* Recipes+Manage.m */; };
-		0AD8831217640AEB00280054 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8831117640AEB00280054 /* Search.m */; };
-		0AD8831517640AEC00280054 /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8831417640AEC00280054 /* Recipes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +37,10 @@
 		0A123F0F175CB91D00D4AF2D /* AllergenCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllergenCell.m; sourceTree = "<group>"; };
 		0A2AF0F917592F8A0096B8D3 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = "Yummly Searcher/SearchViewController.h"; sourceTree = SOURCE_ROOT; };
 		0A2AF0FA17592F8A0096B8D3 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		0A300C001767FD8200057CE9 /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
+		0A300C011767FD8200057CE9 /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
+		0A300C031767FD8200057CE9 /* Recipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipes.h; sourceTree = "<group>"; };
+		0A300C041767FD8200057CE9 /* Recipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipes.m; sourceTree = "<group>"; };
 		0A638A481761F79600658A62 /* SearchResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTableViewController.h; sourceTree = "<group>"; };
 		0A638A491761F79600658A62 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
 		0A638A4C1761FF3600658A62 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -68,10 +72,6 @@
 		0AD883051762689200280054 /* Search+Manage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Search+Manage.m"; sourceTree = "<group>"; };
 		0AD883071763C3EB00280054 /* Recipes+Manage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recipes+Manage.h"; sourceTree = "<group>"; };
 		0AD883081763C3EB00280054 /* Recipes+Manage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recipes+Manage.m"; sourceTree = "<group>"; };
-		0AD8831017640AEB00280054 /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
-		0AD8831117640AEB00280054 /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
-		0AD8831317640AEC00280054 /* Recipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipes.h; sourceTree = "<group>"; };
-		0AD8831417640AEC00280054 /* Recipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,10 +187,10 @@
 		0ACDB06B174F898400CBEC6F /* Tables */ = {
 			isa = PBXGroup;
 			children = (
-				0AD8831317640AEC00280054 /* Recipes.h */,
-				0AD8831417640AEC00280054 /* Recipes.m */,
-				0AD8831017640AEB00280054 /* Search.h */,
-				0AD8831117640AEB00280054 /* Search.m */,
+				0A300C031767FD8200057CE9 /* Recipes.h */,
+				0A300C041767FD8200057CE9 /* Recipes.m */,
+				0A300C001767FD8200057CE9 /* Search.h */,
+				0A300C011767FD8200057CE9 /* Search.m */,
 			);
 			name = Tables;
 			sourceTree = "<group>";
@@ -284,8 +284,8 @@
 				0AD4028817621CCE007BAA7C /* RecentSearchTableViewController.m in Sources */,
 				0AD883061762689200280054 /* Search+Manage.m in Sources */,
 				0AD883091763C3EB00280054 /* Recipes+Manage.m in Sources */,
-				0AD8831217640AEB00280054 /* Search.m in Sources */,
-				0AD8831517640AEC00280054 /* Recipes.m in Sources */,
+				0A300C021767FD8200057CE9 /* Search.m in Sources */,
+				0A300C051767FD8200057CE9 /* Recipes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

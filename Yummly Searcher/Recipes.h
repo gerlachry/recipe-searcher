@@ -2,7 +2,7 @@
 //  Recipes.h
 //  Yummly Searcher
 //
-//  Created by Gerlach, Ryan K on 6/8/13.
+//  Created by Gerlach, Ryan K on 6/11/13.
 //  Copyright (c) 2013 Gerlach, Ryan K. All rights reserved.
 //
 
@@ -19,6 +19,14 @@
 @property (nonatomic, retain) NSString * recipeName;
 @property (nonatomic, retain) NSString * smallImageURL;
 @property (nonatomic, retain) NSString * sourceDisplayName;
-@property (nonatomic, retain) Search *newRelationship;
+@property (nonatomic, retain) NSSet *hasSearches;
+@end
+
+@interface Recipes (CoreDataGeneratedAccessors)
+
+- (void)addHasSearchesObject:(Search *)value;
+- (void)removeHasSearchesObject:(Search *)value;
+- (void)addHasSearches:(NSSet *)values;
+- (void)removeHasSearches:(NSSet *)values;
 
 @end

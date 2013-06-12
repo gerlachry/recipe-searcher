@@ -10,7 +10,7 @@
 
 @interface Search (Manage)
 
-+(Search *)executeSearchWith:(NSString *)searchString
-            inManagedContext:(NSManagedObjectContext *)context;  //save search to coredata, call yummly, parse results to coredata
++(Search *)searchWithString:(NSString *)searchString
+                 inManagedContext:(NSManagedObjectContext *)context;
 
 @end

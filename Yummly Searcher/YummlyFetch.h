@@ -18,7 +18,8 @@
 #define YUMMLY_RECIPE_NAME @"recipeName"
 #define YUMMLY_SMALL_IMAGE_URL @"smallImageUrls"
 #define YUMMLY_SOURCE_DISPLAY_NAME @"sourceDisplayName"
-#define YUMMLY_COURSE 
+#define YUMMLY_COURSE @"attributes.course"
+#define YUMMLY_CUISINE @"attributes.cuisine"
 
 //this is the value needed by yummly api when searching by allergen
 #define YUMMLY_ALLERGY_SEARCH_VALUE @"searchValue"
