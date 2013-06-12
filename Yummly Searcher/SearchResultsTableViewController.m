@@ -7,6 +7,8 @@
 //
 
 #import "SearchResultsTableViewController.h"
+#import "RecipeHelper.h"
+#import "Recipes.h"
 
 @interface SearchResultsTableViewController ()
 
@@ -29,7 +31,7 @@
 {
     [super viewDidLoad];
     //setup fetched table view via core data
-    [self fetchedResultsController];
+    [self setupFetchedResultsContoller];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,19 +44,18 @@
 -(void)setupFetchedResultsContoller
 {
     //setup the table to populate via coredata query, need to add coredata helper class and model
-    /*
-    [VacationHelper openVacation:[VacationHelper getCurrentVacation] usingBlock:^(UIManagedDocument *vacation){
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Place"];
-        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"dateAdded" ascending:YES];
+    [RecipeHelper openRecipeDB:[RecipeHelper getCurrentDatabase] usingBlock:^(UIManagedDocument *recipeDB)  {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Recipes"];
+        //need to add predicate to only get recipes for current search
+        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"recipe" ascending:YES];
         request.sortDescriptors = [NSArray arrayWithObject:sort];
-        
-        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:vacation.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+        NSLog(@"setting fetchedresults");
+        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:recipeDB.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     }];
-     */
-    
+       
 }
 #pragma mark - Table view data source
-
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // number of sections will be the recipe groups (dinner, lunch, soup...)
@@ -66,15 +67,18 @@
     // number of recipes in the section
     return 0;
 }
+*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Recipe Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // set title to recipe name, subtitle to original site name, left assec. imiage to small url if any
+    // set title to recipe name, subtitle to original site name, left assec. image to small url if any
     // if reusing cell cleanup image
-    
+    Recipes *recipe = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = recipe.recipe;
+    cell.detailTextLabel.text = recipe.sourceDisplayName;
     return cell;
 }
 
