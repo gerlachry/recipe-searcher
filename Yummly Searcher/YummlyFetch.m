@@ -52,8 +52,9 @@
     NSError *error = nil;
     searchValues = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
-    //NSLog(@"results = %@", searchValues);
-    return searchValues;
+    NSLog(@"results = %@", [searchValues valueForKeyPath:@"all"]);
+    //returning only the array for all locales
+    return [searchValues valueForKeyPath:@"all"];
     
 }
 

@@ -13,6 +13,7 @@
 		0A638A4A1761F79600658A62 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A638A491761F79600658A62 /* SearchResultsTableViewController.m */; };
 		0A638A4E1761FF3600658A62 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A638A4D1761FF3600658A62 /* CoreDataTableViewController.m */; };
 		0A807CE518467992006F713A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A807CE418467992006F713A /* SearchViewController.m */; };
+		0AB0E03B186380F50028CD6A /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E03A186380F50028CD6A /* iPad.storyboard */; };
 		0AC50282172BE6BD0054AE0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50281172BE6BD0054AE0D /* UIKit.framework */; };
 		0AC50284172BE6BD0054AE0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50283172BE6BD0054AE0D /* Foundation.framework */; };
 		0AC50286172BE6BD0054AE0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50285172BE6BD0054AE0D /* CoreGraphics.framework */; };
@@ -46,6 +47,7 @@
 		0A807CE318467992006F713A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		0A807CE418467992006F713A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		0A807CE618468091006F713A /* YummlyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YummlyAPI.h; path = ../YummlyAPI.h; sourceTree = "<group>"; };
+		0AB0E03A186380F50028CD6A /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		0AC5027E172BE6BD0054AE0D /* Yummly Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummly Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC50281172BE6BD0054AE0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC50283172BE6BD0054AE0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -141,6 +143,7 @@
 				0AC50290172BE6BD0054AE0D /* AppDelegate.h */,
 				0AC50291172BE6BD0054AE0D /* AppDelegate.m */,
 				0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */,
+				0AB0E03A186380F50028CD6A /* iPad.storyboard */,
 				0AC50288172BE6BD0054AE0D /* Supporting Files */,
 			);
 			path = "Yummly Searcher";
@@ -261,6 +264,7 @@
 				0AC50294172BE6BD0054AE0D /* Default.png in Resources */,
 				0AC50296172BE6BD0054AE0D /* Default@2x.png in Resources */,
 				0AC50298172BE6BD0054AE0D /* Default-568h@2x.png in Resources */,
+				0AB0E03B186380F50028CD6A /* iPad.storyboard in Resources */,
 				0ACDB084174FB2A100CBEC6F /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

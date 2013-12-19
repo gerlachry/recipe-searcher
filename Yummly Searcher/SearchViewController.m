@@ -24,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //setup list of allergens
+    //setup list of allergens using the Yummly metadata API
     [self loadAllergySearchValues];
 }
 
@@ -36,7 +36,9 @@
 -(void)loadAllergySearchValues
 {
     //get allergens from yummly, array of dictionaries
+    /*
     NSArray *allergens = [YummlyFetch allergySearchValues];
+    NSLog(@"allergens = %@", allergens);
     NSMutableArray *mutableAllergens = [allergens mutableCopy];
     //add switch to each dictionary object in array
     for (NSMutableDictionary *dict in mutableAllergens){
@@ -44,7 +46,9 @@
         
     }
     self.allergySearchValues = mutableAllergens;
-    NSLog(@"allergySearchValues = %@", self.allergySearchValues);
+    */
+    self.allergySearchValues = [YummlyFetch allergySearchValues];
+    //NSLog(@"allergySearchValues = %@", [self.allergySearchValues valueForKeyPath:@"]);
 }
 
 #pragma mark - Table view data source
@@ -64,13 +68,16 @@
     static NSString *CellIdentifier = @"Allergen Cell";
     AllergenCell *cell = (AllergenCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
-    cell.allergenLabel.text = [[self.allergySearchValues objectAtIndex:indexPath.row] valueForKey:YUMMLY_ALLERGY_LONG];
-    NSString *switchValue = [[self.allergySearchValues objectAtIndex:indexPath.row] valueForKey:YUMMLY_ALLERGY_SWITCH];
+    cell.allergenLabel.text = [[self.allergySearchValues objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ALLERGY_LONG];
+    //NSString *switchValue = [[self.allergySearchValues objectAtIndex:indexPath.row] valueForKey:YUMMLY_ALLERGY_SWITCH];
+   /*
     if ([switchValue isEqualToString:YUMMLY_ALLERGY_SWITCH_OFF]){
         cell.allergenSwitch.on = NO;
     } else {
         cell.allergenSwitch.on = YES;
     }
+    */
+    cell.allergenSwitch.on = NO;
     return cell;
 }
 
