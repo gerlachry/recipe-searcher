@@ -17,6 +17,10 @@
 		0AB0E03F186397570028CD6A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0E03E186397570028CD6A /* SWRevealViewController.m */; };
 		0AB0E042186399060028CD6A /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E041186399060028CD6A /* menu.png */; };
 		0AB0E04518639A390028CD6A /* SearchCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0E04418639A390028CD6A /* SearchCollectionViewController.m */; };
+		0AB0E04B18649D260028CD6A /* bg_cork.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E04918649D260028CD6A /* bg_cork.png */; };
+		0AB0E04C18649D260028CD6A /* bg_cork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E04A18649D260028CD6A /* bg_cork@2x.png */; };
+		0AB0E04F18649F0B0028CD6A /* blank recipe card copy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E04D18649F0B0028CD6A /* blank recipe card copy.jpg */; };
+		0AB0E05018649F0B0028CD6A /* 1910 Recipe Card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E04E18649F0B0028CD6A /* 1910 Recipe Card.jpg */; };
 		0AC50282172BE6BD0054AE0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50281172BE6BD0054AE0D /* UIKit.framework */; };
 		0AC50284172BE6BD0054AE0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50283172BE6BD0054AE0D /* Foundation.framework */; };
 		0AC50286172BE6BD0054AE0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50285172BE6BD0054AE0D /* CoreGraphics.framework */; };
@@ -56,6 +60,10 @@
 		0AB0E041186399060028CD6A /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		0AB0E04318639A390028CD6A /* SearchCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCollectionViewController.h; sourceTree = "<group>"; };
 		0AB0E04418639A390028CD6A /* SearchCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionViewController.m; sourceTree = "<group>"; };
+		0AB0E04918649D260028CD6A /* bg_cork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_cork.png; sourceTree = "<group>"; };
+		0AB0E04A18649D260028CD6A /* bg_cork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cork@2x.png"; sourceTree = "<group>"; };
+		0AB0E04D18649F0B0028CD6A /* blank recipe card copy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blank recipe card copy.jpg"; sourceTree = "<group>"; };
+		0AB0E04E18649F0B0028CD6A /* 1910 Recipe Card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1910 Recipe Card.jpg"; sourceTree = "<group>"; };
 		0AC5027E172BE6BD0054AE0D /* Yummly Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummly Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC50281172BE6BD0054AE0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC50283172BE6BD0054AE0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -149,6 +157,17 @@
 			name = StoryBoards;
 			sourceTree = "<group>";
 		};
+		0AB0E04818649D110028CD6A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				0AB0E04D18649F0B0028CD6A /* blank recipe card copy.jpg */,
+				0AB0E04E18649F0B0028CD6A /* 1910 Recipe Card.jpg */,
+				0AB0E04918649D260028CD6A /* bg_cork.png */,
+				0AB0E04A18649D260028CD6A /* bg_cork@2x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		0AC50275172BE6BD0054AE0D = {
 			isa = PBXGroup;
 			children = (
@@ -180,10 +199,11 @@
 		0AC50287172BE6BD0054AE0D /* Yummly Searcher */ = {
 			isa = PBXGroup;
 			children = (
+				0AB0E040186398FC0028CD6A /* icons */,
+				0AB0E04818649D110028CD6A /* images */,
 				0AB0E047186489FC0028CD6A /* StoryBoards */,
 				0AB0E046186489E40028CD6A /* CustomCells */,
 				0ACDB04C174E46E900CBEC6F /* CoreData */,
-				0AB0E040186398FC0028CD6A /* icons */,
 				0AB0E03C186397320028CD6A /* Dependencies */,
 				0AC502AD172BE7B10054AE0D /* Yummly */,
 				0A638A4B1761FA1900658A62 /* Controllers */,
@@ -309,8 +329,12 @@
 				0AC50294172BE6BD0054AE0D /* Default.png in Resources */,
 				0AC50296172BE6BD0054AE0D /* Default@2x.png in Resources */,
 				0AC50298172BE6BD0054AE0D /* Default-568h@2x.png in Resources */,
+				0AB0E04C18649D260028CD6A /* bg_cork@2x.png in Resources */,
 				0AB0E042186399060028CD6A /* menu.png in Resources */,
+				0AB0E04B18649D260028CD6A /* bg_cork.png in Resources */,
+				0AB0E05018649F0B0028CD6A /* 1910 Recipe Card.jpg in Resources */,
 				0AB0E03B186380F50028CD6A /* iPad.storyboard in Resources */,
+				0AB0E04F18649F0B0028CD6A /* blank recipe card copy.jpg in Resources */,
 				0ACDB084174FB2A100CBEC6F /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

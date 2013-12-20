@@ -10,6 +10,7 @@
 #import "YummlyFetch.h"
 #import "AllergenCell.h"
 #import "SWRevealViewController.h"
+#import "SearchCollectionViewController.h"
 
 @interface SearchViewController () <UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -189,7 +190,9 @@
     NSLog(@"searchString %@", searchString);
     //set collection view data source to the results of this call
     // TODO: put on seperate queue with spinner
-    [YummlyFetch topRecipesForSearch:searchString];
+    UIViewController *vc = self.revealViewController.frontViewController;
+    UIViewController *vcc = [(UINavigationController *)vc topViewController];
+    [(SearchCollectionViewController *)vcc setRecipes:[YummlyFetch topRecipesForSearch:searchString]];
     
 }
 @end

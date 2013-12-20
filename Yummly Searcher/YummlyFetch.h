@@ -33,7 +33,7 @@
 
 @interface YummlyFetch : NSObject
 
-+(NSDictionary *)topRecipesForSearch:(NSString *)searchString;//formated to Yummly
++(NSArray *)topRecipesForSearch:(NSString *)searchString;//formated to Yummly
 +(NSDictionary *)recipeForID:(NSString *)recipeID; //full recipe, includes url for original site
 +(NSArray *)allergySearchValues; //gets list of all allergy searchValues, use in UI
 
