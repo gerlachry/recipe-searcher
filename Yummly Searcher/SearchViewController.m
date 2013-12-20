@@ -9,6 +9,7 @@
 #import "SearchViewController.h"
 #import "YummlyFetch.h"
 #import "AllergenCell.h"
+#import "SWRevealViewController.h"
 
 @interface SearchViewController ()
 
@@ -25,7 +26,8 @@
 {
     [super viewDidLoad];
     //setup list of allergens using the Yummly metadata API
-    [self loadAllergySearchValues];
+    [self loadAllergySearchValues];    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +50,7 @@
     self.allergySearchValues = mutableAllergens;
     */
     self.allergySearchValues = [YummlyFetch allergySearchValues];
-    //NSLog(@"allergySearchValues = %@", [self.allergySearchValues valueForKeyPath:@"]);
+    //NSLog(@"allergySearchValues = %@",self.allergySearchValues);
 }
 
 #pragma mark - Table view data source
@@ -78,6 +80,17 @@
     }
     */
     cell.allergenSwitch.on = NO;
+    //setting dynamic label and switch positions
+    CGRect aframe = cell.allergenLabel.frame;
+    aframe.size.width = self.revealViewController.rearViewRevealWidth/2;
+    cell.allergenLabel.frame = aframe;
+    CGRect sFrame = cell.allergenSwitch.frame;
+    sFrame.origin.x = cell.frame.size.width - cell.allergenSwitch.frame.size.width - 5;
+    cell.allergenSwitch.frame = sFrame;
+    
+    //NSLog(@"cell %f", cell.frame.size.width);
+    //NSLog(@"frame %f", cell.allergenLabel.frame.size.width);
+    //NSLog(@"sframe %f", cell.allergenSwitch.frame.origin.x);
     return cell;
 }
 

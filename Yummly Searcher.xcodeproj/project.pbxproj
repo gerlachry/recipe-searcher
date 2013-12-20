@@ -14,6 +14,9 @@
 		0A638A4E1761FF3600658A62 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A638A4D1761FF3600658A62 /* CoreDataTableViewController.m */; };
 		0A807CE518467992006F713A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A807CE418467992006F713A /* SearchViewController.m */; };
 		0AB0E03B186380F50028CD6A /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E03A186380F50028CD6A /* iPad.storyboard */; };
+		0AB0E03F186397570028CD6A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0E03E186397570028CD6A /* SWRevealViewController.m */; };
+		0AB0E042186399060028CD6A /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E041186399060028CD6A /* menu.png */; };
+		0AB0E04518639A390028CD6A /* SearchCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0E04418639A390028CD6A /* SearchCollectionViewController.m */; };
 		0AC50282172BE6BD0054AE0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50281172BE6BD0054AE0D /* UIKit.framework */; };
 		0AC50284172BE6BD0054AE0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50283172BE6BD0054AE0D /* Foundation.framework */; };
 		0AC50286172BE6BD0054AE0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50285172BE6BD0054AE0D /* CoreGraphics.framework */; };
@@ -48,6 +51,11 @@
 		0A807CE418467992006F713A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		0A807CE618468091006F713A /* YummlyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YummlyAPI.h; path = ../YummlyAPI.h; sourceTree = "<group>"; };
 		0AB0E03A186380F50028CD6A /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		0AB0E03D186397570028CD6A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		0AB0E03E186397570028CD6A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		0AB0E041186399060028CD6A /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		0AB0E04318639A390028CD6A /* SearchCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCollectionViewController.h; sourceTree = "<group>"; };
+		0AB0E04418639A390028CD6A /* SearchCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionViewController.m; sourceTree = "<group>"; };
 		0AC5027E172BE6BD0054AE0D /* Yummly Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummly Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC50281172BE6BD0054AE0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC50283172BE6BD0054AE0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,8 +108,28 @@
 				0A638A491761F79600658A62 /* SearchResultsTableViewController.m */,
 				0A807CE318467992006F713A /* SearchViewController.h */,
 				0A807CE418467992006F713A /* SearchViewController.m */,
+				0AB0E04318639A390028CD6A /* SearchCollectionViewController.h */,
+				0AB0E04418639A390028CD6A /* SearchCollectionViewController.m */,
 			);
 			name = TableControllers;
+			sourceTree = "<group>";
+		};
+		0AB0E03C186397320028CD6A /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				0AB0E03D186397570028CD6A /* SWRevealViewController.h */,
+				0AB0E03E186397570028CD6A /* SWRevealViewController.m */,
+				0ACDB04C174E46E900CBEC6F /* CoreData */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		0AB0E040186398FC0028CD6A /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				0AB0E041186399060028CD6A /* menu.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 		0AC50275172BE6BD0054AE0D = {
@@ -135,7 +163,8 @@
 		0AC50287172BE6BD0054AE0D /* Yummly Searcher */ = {
 			isa = PBXGroup;
 			children = (
-				0ACDB04C174E46E900CBEC6F /* CoreData */,
+				0AB0E040186398FC0028CD6A /* icons */,
+				0AB0E03C186397320028CD6A /* Dependencies */,
 				0AC502AD172BE7B10054AE0D /* Yummly */,
 				0A638A4B1761FA1900658A62 /* TableControllers */,
 				0A123F0E175CB91D00D4AF2D /* AllergenCell.h */,
@@ -264,6 +293,7 @@
 				0AC50294172BE6BD0054AE0D /* Default.png in Resources */,
 				0AC50296172BE6BD0054AE0D /* Default@2x.png in Resources */,
 				0AC50298172BE6BD0054AE0D /* Default-568h@2x.png in Resources */,
+				0AB0E042186399060028CD6A /* menu.png in Resources */,
 				0AB0E03B186380F50028CD6A /* iPad.storyboard in Resources */,
 				0ACDB084174FB2A100CBEC6F /* iPhone.storyboard in Resources */,
 			);
@@ -278,11 +308,13 @@
 			files = (
 				0AC5028E172BE6BD0054AE0D /* main.m in Sources */,
 				0AC50292172BE6BD0054AE0D /* AppDelegate.m in Sources */,
+				0AB0E03F186397570028CD6A /* SWRevealViewController.m in Sources */,
 				0AC502AC172BE7A40054AE0D /* YummlyFetch.m in Sources */,
 				0ACDB04F174E470100CBEC6F /* yummlyModel.xcdatamodeld in Sources */,
 				0A123F10175CB91D00D4AF2D /* AllergenCell.m in Sources */,
 				0A638A4A1761F79600658A62 /* SearchResultsTableViewController.m in Sources */,
 				0A807CE518467992006F713A /* SearchViewController.m in Sources */,
+				0AB0E04518639A390028CD6A /* SearchCollectionViewController.m in Sources */,
 				0A638A4E1761FF3600658A62 /* CoreDataTableViewController.m in Sources */,
 				0AD4028517621208007BAA7C /* RecipeHelper.m in Sources */,
 				0AD4028817621CCE007BAA7C /* RecentSearchTableViewController.m in Sources */,
