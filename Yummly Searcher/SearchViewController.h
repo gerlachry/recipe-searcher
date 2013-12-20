@@ -10,6 +10,6 @@
 
 @interface SearchViewController : UITableViewController
 
-@property (nonatomic, weak) NSArray *allergySearchValues; //from yummly api
+@property (nonatomic, strong) NSMutableArray *allergySearchValues; //from yummly api
 
 @end

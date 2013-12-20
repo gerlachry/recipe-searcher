@@ -38,6 +38,12 @@
 
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"did %@", self.allergySearchValues);
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -46,19 +52,17 @@
 -(void)loadAllergySearchValues
 {
     //get allergens from yummly, array of dictionaries
-    /*
+    
     NSArray *allergens = [YummlyFetch allergySearchValues];
-    NSLog(@"allergens = %@", allergens);
     NSMutableArray *mutableAllergens = [allergens mutableCopy];
-    //add switch to each dictionary object in array
+    //add switch to each dictionary object in array to keep track of toggle switches
     for (NSMutableDictionary *dict in mutableAllergens){
         [dict setObject:YUMMLY_ALLERGY_SWITCH_OFF forKey:YUMMLY_ALLERGY_SWITCH];
-        
     }
     self.allergySearchValues = mutableAllergens;
-    */
-    self.allergySearchValues = [YummlyFetch allergySearchValues];
-    //NSLog(@"allergySearchValues = %@",self.allergySearchValues);
+    
+    //self.allergySearchValues = [YummlyFetch allergySearchValues];
+    NSLog(@"allergySearchValues = %@",self.allergySearchValues);
 }
 
 #pragma mark - Table view data source
@@ -79,26 +83,24 @@
     AllergenCell *cell = (AllergenCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
     cell.allergenLabel.text = [[self.allergySearchValues objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ALLERGY_LONG];
-    //NSString *switchValue = [[self.allergySearchValues objectAtIndex:indexPath.row] valueForKey:YUMMLY_ALLERGY_SWITCH];
-   /*
+    NSString *switchValue = [[self.allergySearchValues objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ALLERGY_SWITCH];
+   
     if ([switchValue isEqualToString:YUMMLY_ALLERGY_SWITCH_OFF]){
         cell.allergenSwitch.on = NO;
     } else {
         cell.allergenSwitch.on = YES;
     }
-    */
-    cell.allergenSwitch.on = NO;
-    //setting dynamic label and switch positions
+    //use the tag later to link a switch to data model
+    cell.allergenSwitch.tag = indexPath.row;
+    
+    //setting dynamic label and switch positions based on views width
     CGRect aframe = cell.allergenLabel.frame;
     aframe.size.width = self.revealViewController.rearViewRevealWidth/2;
     cell.allergenLabel.frame = aframe;
     CGRect sFrame = cell.allergenSwitch.frame;
     sFrame.origin.x = cell.frame.size.width - cell.allergenSwitch.frame.size.width - 5;
     cell.allergenSwitch.frame = sFrame;
-    
-    //NSLog(@"cell %f", cell.frame.size.width);
-    //NSLog(@"frame %f", cell.allergenLabel.frame.size.width);
-    //NSLog(@"sframe %f", cell.allergenSwitch.frame.origin.x);
+    NSLog(@"%@",[[self.allergySearchValues objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ALLERGY_LONG]);
     return cell;
 }
 
@@ -155,6 +157,17 @@
 }
 
 #pragma mark - helper methods
+
+- (IBAction)switchPressed:(UISwitch *)sender
+{
+    //update model when switch is toggled
+    if([sender isOn]){
+        [[self.allergySearchValues objectAtIndex:sender.tag] setValue:YUMMLY_ALLERGY_SWITCH_ON forKey:YUMMLY_ALLERGY_SWITCH];
+    } else {
+        [[self.allergySearchValues objectAtIndex:sender.tag] setValue:YUMMLY_ALLERGY_SWITCH_OFF forKey:YUMMLY_ALLERGY_SWITCH];
+    }
+}
+
 -(void)cancelPressed
 {
     //  clear the search bar and all the switches and the results on front view if any
@@ -165,7 +178,19 @@
 {
     // search yummly based on search bar text and other filters (switches)
     [self.searchBar resignFirstResponder];
-    NSLog(@"search pressed %@", self.searchBar.text);
+    NSString *searchString = self.searchBar.text;
+    for(NSDictionary *items in self.allergySearchValues) {
+        
+        if([[items valueForKey:YUMMLY_ALLERGY_SWITCH] isEqualToString:YUMMLY_ALLERGY_SWITCH_ON]){
+            NSString *searchValue =[items valueForKey:YUMMLY_ALLERGY_SEARCH_VALUE];
+            searchString = [searchString stringByAppendingString:[NSString stringWithFormat:@"&allowedAllergy[]=%@",searchValue]];
+        }
+    }
+    NSLog(@"searchString %@", searchString);
+    //set collection view data source to the results of this call
+    // TODO: put on seperate queue with spinner
+    [YummlyFetch topRecipesForSearch:searchString];
+    
 }
 @end
 

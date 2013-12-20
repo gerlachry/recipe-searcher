@@ -36,6 +36,9 @@
                                         <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="dix-cK-WDu">
                                             <rect key="frame" x="368" y="6" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="switchPressed:" destination="zQo-hq-OHp" eventType="valueChanged" id="1UV-gg-0QO"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                 </tableViewCellContentView>

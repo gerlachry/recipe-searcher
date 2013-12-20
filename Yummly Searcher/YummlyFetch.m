@@ -22,7 +22,7 @@
     NSError *error = nil;
     NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
-    //NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+    NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
     
     return results;
     
@@ -51,7 +51,7 @@
     NSError *error = nil;
     searchValues = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
-    //NSLog(@"results = %@", [searchValues valueForKeyPath:@"all"]);
+    NSLog(@"results = %@", [searchValues valueForKeyPath:@"all"]);
     //returning only the array for all locales
     return [searchValues valueForKeyPath:@"all"];
     

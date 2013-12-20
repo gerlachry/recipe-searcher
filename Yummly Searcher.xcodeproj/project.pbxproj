@@ -99,7 +99,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A638A4B1761FA1900658A62 /* TableControllers */ = {
+		0A638A4B1761FA1900658A62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				0AD4028617621CCE007BAA7C /* RecentSearchTableViewController.h */,
@@ -111,7 +111,7 @@
 				0AB0E04318639A390028CD6A /* SearchCollectionViewController.h */,
 				0AB0E04418639A390028CD6A /* SearchCollectionViewController.m */,
 			);
-			name = TableControllers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		0AB0E03C186397320028CD6A /* Dependencies */ = {
@@ -119,7 +119,6 @@
 			children = (
 				0AB0E03D186397570028CD6A /* SWRevealViewController.h */,
 				0AB0E03E186397570028CD6A /* SWRevealViewController.m */,
-				0ACDB04C174E46E900CBEC6F /* CoreData */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -130,6 +129,24 @@
 				0AB0E041186399060028CD6A /* menu.png */,
 			);
 			name = icons;
+			sourceTree = "<group>";
+		};
+		0AB0E046186489E40028CD6A /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				0A123F0E175CB91D00D4AF2D /* AllergenCell.h */,
+				0A123F0F175CB91D00D4AF2D /* AllergenCell.m */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		0AB0E047186489FC0028CD6A /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */,
+				0AB0E03A186380F50028CD6A /* iPad.storyboard */,
+			);
+			name = StoryBoards;
 			sourceTree = "<group>";
 		};
 		0AC50275172BE6BD0054AE0D = {
@@ -163,16 +180,15 @@
 		0AC50287172BE6BD0054AE0D /* Yummly Searcher */ = {
 			isa = PBXGroup;
 			children = (
+				0AB0E047186489FC0028CD6A /* StoryBoards */,
+				0AB0E046186489E40028CD6A /* CustomCells */,
+				0ACDB04C174E46E900CBEC6F /* CoreData */,
 				0AB0E040186398FC0028CD6A /* icons */,
 				0AB0E03C186397320028CD6A /* Dependencies */,
 				0AC502AD172BE7B10054AE0D /* Yummly */,
-				0A638A4B1761FA1900658A62 /* TableControllers */,
-				0A123F0E175CB91D00D4AF2D /* AllergenCell.h */,
-				0A123F0F175CB91D00D4AF2D /* AllergenCell.m */,
+				0A638A4B1761FA1900658A62 /* Controllers */,
 				0AC50290172BE6BD0054AE0D /* AppDelegate.h */,
 				0AC50291172BE6BD0054AE0D /* AppDelegate.m */,
-				0ACDB083174FB2A100CBEC6F /* iPhone.storyboard */,
-				0AB0E03A186380F50028CD6A /* iPad.storyboard */,
 				0AC50288172BE6BD0054AE0D /* Supporting Files */,
 			);
 			path = "Yummly Searcher";
