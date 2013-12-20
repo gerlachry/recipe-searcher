@@ -11,22 +11,30 @@
 #import "AllergenCell.h"
 #import "SWRevealViewController.h"
 
-@interface SearchViewController ()
+@interface SearchViewController () <UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
 @implementation SearchViewController
 
 @synthesize allergySearchValues = _allergySearchValues;
-
-
+@synthesize searchBar = _searchBar;
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //setup navigation buttons
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelPressed)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStylePlain target:self action:@selector(searchPressed)];
+    self.navigationItem.rightBarButtonItem = searchButton;
+    
+    //setup searchbar delegate
+    self.searchBar.delegate = self;
     //setup list of allergens using the Yummly metadata API
-    [self loadAllergySearchValues];    
+    [self loadAllergySearchValues];
 
 }
 
@@ -140,4 +148,29 @@
 
 }
 
+#pragma mark - search bar delegates
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self searchPressed];
+}
+
+#pragma mark - helper methods
+-(void)cancelPressed
+{
+    //  clear the search bar and all the switches and the results on front view if any
+    NSLog(@"cancel pressed");
+}
+
+-(void)searchPressed
+{
+    // search yummly based on search bar text and other filters (switches)
+    [self.searchBar resignFirstResponder];
+    NSLog(@"search pressed %@", self.searchBar.text);
+}
 @end
+
+
+
+
+
+

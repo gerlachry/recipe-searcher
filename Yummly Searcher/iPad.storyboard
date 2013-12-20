@@ -51,6 +51,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recipe Search" id="Uql-nK-ote"/>
+                    <connections>
+                        <outlet property="searchBar" destination="IPK-hR-O10" id="OTK-Qp-VE5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYh-ls-N5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

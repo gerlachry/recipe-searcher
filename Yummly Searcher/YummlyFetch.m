@@ -13,8 +13,6 @@
 
 +(NSDictionary *)topRecipesForSearch:(NSString *)searchString;
 {
-    //NSString *query = @"http://api.yummly.com/v1/api/recipes?_app_id=61948101&_app_key=6efbb3b2c0d1d73a03739275d29a977a&q=french bread";
-    //query = [query stringByAppendingString:@"&allowedAllergy=393^Gluten-Free" ];
 
     NSString *query = [NSString stringWithFormat:@"%@%@%@%@%@%@%@",YUMMLY_SEARCH_URL,@"app_id=",YUMMLY_APP,@"&_app_key=",YUMMLY_API_KEY,@"&q=",searchString];
     
@@ -32,6 +30,7 @@
 
 +(NSDictionary *)recipeForID:(NSString *)recipeID
 {
+    //TODO :implement get one recipe
     NSDictionary *recipe = nil;
     return recipe;
     
@@ -52,7 +51,7 @@
     NSError *error = nil;
     searchValues = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
-    NSLog(@"results = %@", [searchValues valueForKeyPath:@"all"]);
+    //NSLog(@"results = %@", [searchValues valueForKeyPath:@"all"]);
     //returning only the array for all locales
     return [searchValues valueForKeyPath:@"all"];
     
