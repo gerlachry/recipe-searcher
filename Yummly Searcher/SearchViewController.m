@@ -39,12 +39,6 @@
 
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    NSLog(@"did %@", self.allergySearchValues);
-    
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -63,7 +57,7 @@
     self.allergySearchValues = mutableAllergens;
     
     //self.allergySearchValues = [YummlyFetch allergySearchValues];
-    NSLog(@"allergySearchValues = %@",self.allergySearchValues);
+    //NSLog(@"allergySearchValues = %@",self.allergySearchValues);
 }
 
 #pragma mark - Table view data source

@@ -8,6 +8,8 @@
 
 #import "SearchCollectionViewController.h"
 #import "SWRevealViewController.h"
+#import "RecipeCollectionCell.h"
+#import "YummlyFetch.h"
 
 @interface SearchCollectionViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -28,10 +30,11 @@
     return self;
 }
 
--(void)setRecipes:(NSArray *)recipes
+-(void)setRecipes:(NSDictionary *)recipes
 {
     NSLog(@"recipes %@", recipes);
     _recipes = recipes;
+    [self.collectionView reloadData];
 }
 
 - (void)viewDidLoad
@@ -77,14 +80,20 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.recipes count];
+    return [[self.recipes valueForKey:@"matches"] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"RecipeCell " forIndexPath:indexPath];
+    RecipeCollectionCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"RecipeCell2" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
+    NSLog(@"%@", [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_RECIPE_NAME]);
+    cell.recipeName.text = [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_RECIPE_NAME];
+    NSString *ingredients = [[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_INGREDIENTS] componentsJoinedByString:@"\n"];
+    [cell.ingredients setNumberOfLines:[[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_INGREDIENTS] count]];
+    cell.ingredients.text = ingredients;
     return cell;
 }
+
 @end
 
 

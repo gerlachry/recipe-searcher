@@ -10,6 +10,6 @@
 
 @interface SearchCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (nonatomic, strong) NSArray *recipes; //array of results from search
+@property (nonatomic, strong) NSDictionary *recipes; //array of results from search
 
 @end

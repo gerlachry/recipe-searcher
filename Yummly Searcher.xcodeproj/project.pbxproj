@@ -21,6 +21,7 @@
 		0AB0E04C18649D260028CD6A /* bg_cork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E04A18649D260028CD6A /* bg_cork@2x.png */; };
 		0AB0E04F18649F0B0028CD6A /* blank recipe card copy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E04D18649F0B0028CD6A /* blank recipe card copy.jpg */; };
 		0AB0E05018649F0B0028CD6A /* 1910 Recipe Card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AB0E04E18649F0B0028CD6A /* 1910 Recipe Card.jpg */; };
+		0AB0E053186509170028CD6A /* RecipeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0E052186509170028CD6A /* RecipeCollectionCell.m */; };
 		0AC50282172BE6BD0054AE0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50281172BE6BD0054AE0D /* UIKit.framework */; };
 		0AC50284172BE6BD0054AE0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50283172BE6BD0054AE0D /* Foundation.framework */; };
 		0AC50286172BE6BD0054AE0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC50285172BE6BD0054AE0D /* CoreGraphics.framework */; };
@@ -64,6 +65,8 @@
 		0AB0E04A18649D260028CD6A /* bg_cork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cork@2x.png"; sourceTree = "<group>"; };
 		0AB0E04D18649F0B0028CD6A /* blank recipe card copy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blank recipe card copy.jpg"; sourceTree = "<group>"; };
 		0AB0E04E18649F0B0028CD6A /* 1910 Recipe Card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1910 Recipe Card.jpg"; sourceTree = "<group>"; };
+		0AB0E051186509170028CD6A /* RecipeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionCell.h; sourceTree = "<group>"; };
+		0AB0E052186509170028CD6A /* RecipeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionCell.m; sourceTree = "<group>"; };
 		0AC5027E172BE6BD0054AE0D /* Yummly Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummly Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC50281172BE6BD0054AE0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC50283172BE6BD0054AE0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -144,6 +147,8 @@
 			children = (
 				0A123F0E175CB91D00D4AF2D /* AllergenCell.h */,
 				0A123F0F175CB91D00D4AF2D /* AllergenCell.m */,
+				0AB0E051186509170028CD6A /* RecipeCollectionCell.h */,
+				0AB0E052186509170028CD6A /* RecipeCollectionCell.m */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				0AD883091763C3EB00280054 /* Recipes+Manage.m in Sources */,
 				0A300C021767FD8200057CE9 /* Search.m in Sources */,
 				0A300C051767FD8200057CE9 /* Recipes.m in Sources */,
+				0AB0E053186509170028CD6A /* RecipeCollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
