@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A123F10175CB91D00D4AF2D /* AllergenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A123F0F175CB91D00D4AF2D /* AllergenCell.m */; };
+		0A2CAF3A1869D287003E4CAE /* antique_paper_or_papyrus_by_ravenhart_stock-d3c7snr.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CAF391869D287003E4CAE /* antique_paper_or_papyrus_by_ravenhart_stock-d3c7snr.jpg */; };
+		0A2CAF3D1869D2C7003E4CAE /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CAF3C1869D2C7003E4CAE /* RecipeViewController.m */; };
 		0A300C021767FD8200057CE9 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A300C011767FD8200057CE9 /* Search.m */; };
 		0A300C051767FD8200057CE9 /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A300C041767FD8200057CE9 /* Recipes.m */; };
 		0A638A4A1761F79600658A62 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A638A491761F79600658A62 /* SearchResultsTableViewController.m */; };
@@ -44,6 +46,9 @@
 /* Begin PBXFileReference section */
 		0A123F0E175CB91D00D4AF2D /* AllergenCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllergenCell.h; sourceTree = "<group>"; };
 		0A123F0F175CB91D00D4AF2D /* AllergenCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllergenCell.m; sourceTree = "<group>"; };
+		0A2CAF391869D287003E4CAE /* antique_paper_or_papyrus_by_ravenhart_stock-d3c7snr.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "antique_paper_or_papyrus_by_ravenhart_stock-d3c7snr.jpg"; sourceTree = "<group>"; };
+		0A2CAF3B1869D2C7003E4CAE /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		0A2CAF3C1869D2C7003E4CAE /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 		0A300C001767FD8200057CE9 /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
 		0A300C011767FD8200057CE9 /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
 		0A300C031767FD8200057CE9 /* Recipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipes.h; sourceTree = "<group>"; };
@@ -113,6 +118,8 @@
 		0A638A4B1761FA1900658A62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A2CAF3B1869D2C7003E4CAE /* RecipeViewController.h */,
+				0A2CAF3C1869D2C7003E4CAE /* RecipeViewController.m */,
 				0AD4028617621CCE007BAA7C /* RecentSearchTableViewController.h */,
 				0AD4028717621CCE007BAA7C /* RecentSearchTableViewController.m */,
 				0A638A481761F79600658A62 /* SearchResultsTableViewController.h */,
@@ -165,6 +172,7 @@
 		0AB0E04818649D110028CD6A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				0A2CAF391869D287003E4CAE /* antique_paper_or_papyrus_by_ravenhart_stock-d3c7snr.jpg */,
 				0AB0E04D18649F0B0028CD6A /* blank recipe card copy.jpg */,
 				0AB0E04E18649F0B0028CD6A /* 1910 Recipe Card.jpg */,
 				0AB0E04918649D260028CD6A /* bg_cork.png */,
@@ -337,6 +345,7 @@
 				0AB0E04C18649D260028CD6A /* bg_cork@2x.png in Resources */,
 				0AB0E042186399060028CD6A /* menu.png in Resources */,
 				0AB0E04B18649D260028CD6A /* bg_cork.png in Resources */,
+				0A2CAF3A1869D287003E4CAE /* antique_paper_or_papyrus_by_ravenhart_stock-d3c7snr.jpg in Resources */,
 				0AB0E05018649F0B0028CD6A /* 1910 Recipe Card.jpg in Resources */,
 				0AB0E03B186380F50028CD6A /* iPad.storyboard in Resources */,
 				0AB0E04F18649F0B0028CD6A /* blank recipe card copy.jpg in Resources */,
@@ -353,6 +362,7 @@
 			files = (
 				0AC5028E172BE6BD0054AE0D /* main.m in Sources */,
 				0AC50292172BE6BD0054AE0D /* AppDelegate.m in Sources */,
+				0A2CAF3D1869D2C7003E4CAE /* RecipeViewController.m in Sources */,
 				0AB0E03F186397570028CD6A /* SWRevealViewController.m in Sources */,
 				0AC502AC172BE7A40054AE0D /* YummlyFetch.m in Sources */,
 				0ACDB04F174E470100CBEC6F /* yummlyModel.xcdatamodeld in Sources */,

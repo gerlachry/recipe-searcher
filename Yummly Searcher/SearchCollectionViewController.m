@@ -10,16 +10,18 @@
 #import "SWRevealViewController.h"
 #import "RecipeCollectionCell.h"
 #import "YummlyFetch.h"
+#import "RecipeViewController.h"
 
 @interface SearchCollectionViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (nonatomic, strong) NSDictionary *selecteRecipe;
 @end
 
 @implementation SearchCollectionViewController
 
 @synthesize recipes = _recipes;
 @synthesize collectionView = _collectionView;
+@synthesize selecteRecipe = _selecteRecipe;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -103,11 +105,35 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //call GET recipe api
-    NSLog(@"clicked: %@", [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ID]);
-    NSDictionary *recipe = [YummlyFetch recipeForID:[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ID]];
-    NSLog(@"recipe %@", recipe);
+    //NSLog(@"clicked: %@", [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ID]);
+    self.selecteRecipe = [YummlyFetch recipeForID:[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ID]];
+    //NSLog(@"recipe %@", recipe);
+    [self performSegueWithIdentifier:@"RecipeSegue" sender:self];
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"RecipeSegue"]) {
+        [segue.destinationViewController setRecipe:self.selecteRecipe];
+    }
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
