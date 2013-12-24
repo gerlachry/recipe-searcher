@@ -88,13 +88,43 @@
     cell.backgroundColor = [UIColor whiteColor];
     NSLog(@"%@", [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_RECIPE_NAME]);
     cell.recipeName.text = [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_RECIPE_NAME];
-    NSString *ingredients = [[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_INGREDIENTS] componentsJoinedByString:@"\n"];
-    [cell.ingredients setNumberOfLines:[[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_INGREDIENTS] count]];
+    NSString *ingredients = [[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_INGREDIENTS] componentsJoinedByString:@", "];
+    //[cell.ingredients setNumberOfLines:[[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_INGREDIENTS] count]];
     cell.ingredients.text = ingredients;
+    cell.ingredients.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
+- (UIEdgeInsets)collectionView:
+(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(20, 20, 20, 20);
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //call GET recipe api
+    NSLog(@"clicked: %@", [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ID]);
+    NSDictionary *recipe = [YummlyFetch recipeForID:[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ID]];
+    NSLog(@"recipe %@", recipe);
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

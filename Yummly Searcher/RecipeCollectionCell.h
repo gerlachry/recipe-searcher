@@ -11,6 +11,7 @@
 @interface RecipeCollectionCell : UICollectionViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *recipeName;
-@property (nonatomic, strong) IBOutlet UILabel *ingredients;
+@property (nonatomic, strong) IBOutlet UITextView *ingredients;
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
 
 @end

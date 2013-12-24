@@ -29,10 +29,17 @@
 
 +(NSDictionary *)recipeForID:(NSString *)recipeID
 {
-    //TODO :implement get one recipe
-    NSDictionary *recipe = nil;
-    return recipe;
+    // TODO: replace hard coded url with variable, was giving error...
+    NSString *query = [NSString stringWithFormat:@"%@%@%@%@%@%@%@",@"http://api.yummly.com/v1/api/recipe/",recipeID,@"?",@"_app_id=",YUMMLY_APP,@"&_app_key=",YUMMLY_API_KEY];
     
+    query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"[%@ %@] sent %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), query);
+    NSError *error = nil;
+    NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
+    if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
+    
+    return results;
 }
 
 +(NSArray *)allergySearchValues
