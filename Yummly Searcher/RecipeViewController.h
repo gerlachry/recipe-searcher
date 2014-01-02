@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class RecipeViewController;
+@protocol RecipeViewControllerDelegate <NSObject>
 
+-(void)selectedSourceRecipe:(NSDictionary *)recipe with:(RecipeViewController *)sender;
+@end
 @interface RecipeViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *recipe;
-
+@property (nonatomic, weak) id<RecipeViewControllerDelegate> delegate;
 @end

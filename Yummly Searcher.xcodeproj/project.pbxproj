@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A123F10175CB91D00D4AF2D /* AllergenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A123F0F175CB91D00D4AF2D /* AllergenCell.m */; };
 		0A196A051875F20400BCF8C8 /* recipe_card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A196A041875F20400BCF8C8 /* recipe_card.jpg */; };
+		0A196A081876024100BCF8C8 /* SourceRecipeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A196A071876024100BCF8C8 /* SourceRecipeWebViewController.m */; };
 		0A2CAF3A1869D287003E4CAE /* antique_paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CAF391869D287003E4CAE /* antique_paper.jpg */; };
 		0A2CAF3D1869D2C7003E4CAE /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CAF3C1869D2C7003E4CAE /* RecipeViewController.m */; };
 		0A300C021767FD8200057CE9 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A300C011767FD8200057CE9 /* Search.m */; };
@@ -48,6 +49,8 @@
 		0A123F0E175CB91D00D4AF2D /* AllergenCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllergenCell.h; sourceTree = "<group>"; };
 		0A123F0F175CB91D00D4AF2D /* AllergenCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllergenCell.m; sourceTree = "<group>"; };
 		0A196A041875F20400BCF8C8 /* recipe_card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recipe_card.jpg; sourceTree = "<group>"; };
+		0A196A061876024100BCF8C8 /* SourceRecipeWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceRecipeWebViewController.h; sourceTree = "<group>"; };
+		0A196A071876024100BCF8C8 /* SourceRecipeWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceRecipeWebViewController.m; sourceTree = "<group>"; };
 		0A2CAF391869D287003E4CAE /* antique_paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = antique_paper.jpg; sourceTree = "<group>"; };
 		0A2CAF3B1869D2C7003E4CAE /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
 		0A2CAF3C1869D2C7003E4CAE /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 		0A638A4B1761FA1900658A62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A196A061876024100BCF8C8 /* SourceRecipeWebViewController.h */,
+				0A196A071876024100BCF8C8 /* SourceRecipeWebViewController.m */,
 				0A2CAF3B1869D2C7003E4CAE /* RecipeViewController.h */,
 				0A2CAF3C1869D2C7003E4CAE /* RecipeViewController.m */,
 				0AD4028617621CCE007BAA7C /* RecentSearchTableViewController.h */,
@@ -375,6 +380,7 @@
 				0A807CE518467992006F713A /* SearchViewController.m in Sources */,
 				0AB0E04518639A390028CD6A /* SearchCollectionViewController.m in Sources */,
 				0A638A4E1761FF3600658A62 /* CoreDataTableViewController.m in Sources */,
+				0A196A081876024100BCF8C8 /* SourceRecipeWebViewController.m in Sources */,
 				0AD4028517621208007BAA7C /* RecipeHelper.m in Sources */,
 				0AD4028817621CCE007BAA7C /* RecentSearchTableViewController.m in Sources */,
 				0AD883061762689200280054 /* Search+Manage.m in Sources */,

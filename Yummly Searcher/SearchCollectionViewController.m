@@ -11,11 +11,14 @@
 #import "RecipeCollectionCell.h"
 #import "YummlyFetch.h"
 #import "RecipeViewController.h"
+#import "SourceRecipeWebViewController.h"
 
 @interface SearchCollectionViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSDictionary *selecteRecipe;
+@property (nonatomic, strong) NSDictionary *selectedRecipeDetails; //detailed recipe coming back from popover protocol
 @property (weak, nonatomic) IBOutlet UIButton *anchorButton;
+@property (nonatomic, strong) UIPopoverController *recipeViewPopoverController;
 
 @end
 
@@ -24,6 +27,7 @@
 @synthesize recipes = _recipes;
 @synthesize collectionView = _collectionView;
 @synthesize selecteRecipe = _selecteRecipe;
+@synthesize recipeViewPopoverController = _recipeViewPopoverController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -90,10 +94,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     RecipeCollectionCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"RecipeCell2" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    //NSLog(@"%@", [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_RECIPE_NAME]);
     cell.recipeName.text = [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_RECIPE_NAME];
     NSString *ingredients = [[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_INGREDIENTS] componentsJoinedByString:@", "];
-    //[cell.ingredients setNumberOfLines:[[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_INGREDIENTS] count]];
     cell.ingredients.text = ingredients;
     cell.ingredients.backgroundColor = [UIColor clearColor];
     return cell;
@@ -133,8 +135,22 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"RecipeSegue"]) {
-        //set current recipe and download recipe details in the next VC
+        //set current recipe and save reference to the popoverVC so we can later dismiss via protocol
+        self.recipeViewPopoverController =  [(UIStoryboardPopoverSegue *)segue popoverController];
+        [segue.destinationViewController setDelegate:self];
         [segue.destinationViewController setRecipe:self.selecteRecipe];
+    } else if ([segue.identifier isEqualToString:@"SegueToWeb"]){
+        [segue.destinationViewController setRecipeURL:[self.selectedRecipeDetails valueForKeyPath:@"source.sourceRecipeUrl"]];
+    }
+}
+
+#pragma mark - RecipeViewController delegate
+-(void)selectedSourceRecipe:(NSDictionary *)recipe with:(RecipeViewController *)sender
+{
+    if(self.recipeViewPopoverController){
+        [self.recipeViewPopoverController dismissPopoverAnimated:YES];
+        self.selectedRecipeDetails = recipe;
+        [self performSegueWithIdentifier:@"SegueToWeb" sender:self];
     }
 }
 

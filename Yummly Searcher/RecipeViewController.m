@@ -56,11 +56,8 @@
         //self.ingredientsTextView.text = [[self.recipe valueForKeyPath:<#(NSString *)#>]]
         dispatch_queue_t downloadQueue = dispatch_queue_create("download", NULL);
         dispatch_async(downloadQueue, ^{
-            NSLog(@"viewer recipe id = %@", [self.recipe valueForKey:YUMMLY_ID]);
             self.currentRecipeDetails = [YummlyFetch recipeForID:[self.recipe valueForKey:YUMMLY_ID]];
-            NSLog(@"currentRecipeDetails %@", self.currentRecipeDetails);
             dispatch_async(dispatch_get_main_queue(), ^{
-                
                 self.ingredientsTextView.text = [[self.currentRecipeDetails valueForKey:YUMMLY_INGREDIENT_LINES] componentsJoinedByString:@",\n"];
             });
         });
@@ -68,6 +65,12 @@
 
     }
 }
+
+- (IBAction)sourceButtonSelected:(UIButton *)sender
+{
+    [self.delegate selectedSourceRecipe:self.currentRecipeDetails with:self];
+}
+
 
 @end
 

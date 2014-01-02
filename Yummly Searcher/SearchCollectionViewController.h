@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RecipeViewController.h"
 
-@interface SearchCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface SearchCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, RecipeViewControllerDelegate>
 
 @property (nonatomic, strong) NSDictionary *recipes; //array of results from search
 

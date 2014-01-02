@@ -193,6 +193,7 @@
                     <connections>
                         <outlet property="anchorButton" destination="wfo-0m-7nd" id="Ikv-rV-fak"/>
                         <outlet property="collectionView" destination="fXi-7E-VnP" id="KdL-q6-MuD"/>
+                        <segue destination="Rrv-RL-acm" kind="push" identifier="SegueToWeb" id="zB1-lB-XK3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wp3-WJ-dB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,7 +203,7 @@
         <!--Recipe View Controller - Recipe Details-->
         <scene sceneID="HQY-HK-PC1">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="2Ze-fP-kWt" customClass="RecipeViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="formSheet" id="2Ze-fP-kWt" customClass="RecipeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UNb-Cw-kby">
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -214,6 +215,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uEC-Gs-PRh">
+                                <rect key="frame" x="171" y="570" width="199" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Source page for directions">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sourceButtonSelected:" destination="2Ze-fP-kWt" eventType="touchUpInside" id="Nt4-Os-x0g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -225,7 +236,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLW-fW-K2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4214" y="-1279"/>
+            <point key="canvasLocation" x="4214" y="-1561"/>
+        </scene>
+        <!--Source Recipe Web View Controller-->
+        <scene sceneID="RM8-8Z-hT0">
+            <objects>
+                <viewController id="Rrv-RL-acm" customClass="SourceRecipeWebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xmy-v9-NhW">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="xcd-ys-DNS">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ksg-UD-kDu"/>
+                    <connections>
+                        <outlet property="webView" destination="xcd-ys-DNS" id="bP4-mm-DQA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yt8-hz-yTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4214" y="-817"/>
         </scene>
     </scenes>
     <resources>
