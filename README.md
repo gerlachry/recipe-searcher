@@ -1,9 +1,10 @@
 recipe-searcher
 ===============
 
-iOS app for searching for allergy friendly recipes using the Yummly API
+iOS app for searching for allergy friendly recipes using the Yummly API.  Since Yummly recently came out with their own app this is just for personal educational purposes.  Just getting started both on github and objective-c.  
 
-Just getting started both on github and objective-c.  Idea is to create a universal app for searching allergy friendly recipes.
+Added integration with Travis CI.  Build details can be found here:
+https://travis-ci.org/gerlachry/recipe-searcher
 
 When cloning need to add a YummlyAPI.h file to your local project which contains constants for your Yummly API keys.
 Just update the values for YUMMLY_APP and YUMMLY_API_KEY.
