@@ -129,31 +129,31 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dtW-tg-wOW">
-                                    <size key="itemSize" width="279" height="211"/>
+                                    <size key="itemSize" width="359" height="81"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" reuseIdentifier="RecipeCell2" id="nym-eg-xvQ" customClass="RecipeCollectionCell">
-                                        <rect key="frame" x="0.0" y="64" width="279" height="211"/>
+                                        <rect key="frame" x="0.0" y="64" width="359" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="279" height="211"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank recipe card copy.jpg" id="rDl-K5-kk8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="279" height="211"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipe_card.jpg" id="rDl-K5-kk8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="117"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RecipeName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EH3-Bk-n2I">
-                                                    <rect key="frame" x="20" y="27" width="239" height="21"/>
+                                                    <rect key="frame" x="20" y="6" width="359" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Ingredients" selectable="NO" id="OKd-S0-6md">
-                                                    <rect key="frame" x="20" y="48" width="239" height="143"/>
+                                                    <rect key="frame" x="20" y="26" width="275" height="49"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -166,7 +166,6 @@
                                             <outlet property="imageView" destination="rDl-K5-kk8" id="GB4-Rh-4kY"/>
                                             <outlet property="ingredients" destination="OKd-S0-6md" id="rEq-mz-xVH"/>
                                             <outlet property="recipeName" destination="EH3-Bk-n2I" id="C7t-zU-dBq"/>
-                                            <segue destination="2Ze-fP-kWt" kind="push" identifier="RecipeSegue" id="3zt-3p-yXg"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -175,11 +174,24 @@
                                     <outlet property="delegate" destination="pWR-AX-cOZ" id="QXo-c3-cm8"/>
                                 </connections>
                             </collectionView>
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wfo-0m-7nd">
+                                <rect key="frame" x="702" y="974" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="anchorButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2Ze-fP-kWt" kind="popover" identifier="RecipeSegue" popoverAnchorView="wfo-0m-7nd" id="Rok-rn-ea7">
+                                        <popoverArrowDirection key="popoverArrowDirection" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="R0g-27-njd"/>
                     <connections>
+                        <outlet property="anchorButton" destination="wfo-0m-7nd" id="Ikv-rV-fak"/>
                         <outlet property="collectionView" destination="fXi-7E-VnP" id="KdL-q6-MuD"/>
                     </connections>
                 </viewController>
@@ -190,22 +202,23 @@
         <!--Recipe View Controller - Recipe Details-->
         <scene sceneID="HQY-HK-PC1">
             <objects>
-                <viewController id="2Ze-fP-kWt" customClass="RecipeViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="2Ze-fP-kWt" customClass="RecipeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UNb-Cw-kby">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Recipe Ingredients" id="XQ7-bA-nXR">
-                                <rect key="frame" x="0.0" y="66" width="768" height="469"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Recipe Ingredients" id="XQ7-bA-nXR">
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe Details" id="5zY-ra-Ncf"/>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="ingredientsTextView" destination="XQ7-bA-nXR" id="gJX-Iz-sWr"/>
                     </connections>
@@ -216,7 +229,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blank recipe card copy.jpg" width="1600" height="1067"/>
+        <image name="recipe_card.jpg" width="1600" height="1073"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>

@@ -15,6 +15,8 @@
 @interface SearchCollectionViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSDictionary *selecteRecipe;
+@property (weak, nonatomic) IBOutlet UIButton *anchorButton;
+
 @end
 
 @implementation SearchCollectionViewController
@@ -34,7 +36,7 @@
 
 -(void)setRecipes:(NSDictionary *)recipes
 {
-    NSLog(@"recipes %@", recipes);
+    //NSLog(@"recipes %@", recipes);
     _recipes = recipes;
     [self.collectionView reloadData];
 }
@@ -62,8 +64,8 @@
     self.revealViewController.rearViewRevealOverdraw=0;
     //resize rear view to half the width of front view
     self.revealViewController.rearViewRevealWidth = self.view.frame.size.width/2;
-    NSLog(@"rearwidth %f", self.revealViewController.rearViewRevealWidth);
-    NSLog(@"frontwidth %f", self.view.frame.size.width);
+    //NSLog(@"rearwidth %f", self.revealViewController.rearViewRevealWidth);
+    //NSLog(@"frontwidth %f", self.view.frame.size.width);
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,7 +90,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     RecipeCollectionCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"RecipeCell2" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    NSLog(@"%@", [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_RECIPE_NAME]);
+    //NSLog(@"%@", [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_RECIPE_NAME]);
     cell.recipeName.text = [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_RECIPE_NAME];
     NSString *ingredients = [[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_INGREDIENTS] componentsJoinedByString:@", "];
     //[cell.ingredients setNumberOfLines:[[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_INGREDIENTS] count]];
@@ -97,23 +99,41 @@
     return cell;
 }
 
+//in collection view how to set the space between each cell ...
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(20, 20, 20, 20);
 }
 
+-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 5;
+}
+
+-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 5;
+}
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //call GET recipe api
-    //NSLog(@"clicked: %@", [[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ID]);
-    self.selecteRecipe = [YummlyFetch recipeForID:[[[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row] valueForKeyPath:YUMMLY_ID]];
-    //NSLog(@"recipe %@", recipe);
+    //made an invisible button w/ an outlet in the storyboard to use as an anchor point to enable a popover segue when a collection cell is selected
+    RecipeCollectionCell *myCell = (RecipeCollectionCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    
+    //Make the rect you want the popover to point at.
+    CGRect displayFrom = CGRectMake(myCell.frame.origin.x + myCell.frame.size.width, myCell.center.y + self.collectionView.frame.origin.y - self.collectionView.contentOffset.y, 1, 1);
+    
+    //Now move your anchor button to this location
+    self.anchorButton.frame = displayFrom;
+    
+    //keep track of the currently selected recipe
+    self.selecteRecipe = [[self.recipes valueForKey:@"matches"] objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"RecipeSegue" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"RecipeSegue"]) {
+        //set current recipe and download recipe details in the next VC
         [segue.destinationViewController setRecipe:self.selecteRecipe];
     }
 }

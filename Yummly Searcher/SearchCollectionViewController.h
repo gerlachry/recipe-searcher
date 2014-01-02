@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface SearchCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSDictionary *recipes; //array of results from search
 

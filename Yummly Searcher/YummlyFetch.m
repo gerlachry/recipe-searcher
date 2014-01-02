@@ -11,10 +11,18 @@
 
 @implementation YummlyFetch
 
-+(NSDictionary *)topRecipesForSearch:(NSString *)searchString;
++(NSDictionary *)topRecipesForSearch:(NSString *)searchString withMaxResultsPerPage:(int)maxResultsPerPage startingAtItem:(int)startItemNumber
 {
-
-    NSString *query = [NSString stringWithFormat:@"%@%@%@%@%@%@%@",YUMMLY_SEARCH_URL,@"app_id=",YUMMLY_APP,@"&_app_key=",YUMMLY_API_KEY,@"&q=",searchString];
+    int maxResults = maxResultsPerPage;
+    if (!maxResults || maxResults < 1) {
+        maxResults = YUMMLY_SEARCH_MAX_RESULTS;
+    }
+    int startItem = startItemNumber;
+    if (!startItem || startItem < 1){
+        startItem = YUMMLY_SEARCH_START_NUMBER;
+    }
+    
+    NSString *query = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%d%@%d",YUMMLY_SEARCH_URL,@"app_id=",YUMMLY_APP,@"&_app_key=",YUMMLY_API_KEY,@"&q=",searchString,@"&maxResult=",maxResults,@"&start=",startItem];
     
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];

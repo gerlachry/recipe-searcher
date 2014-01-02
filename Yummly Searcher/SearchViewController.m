@@ -186,7 +186,9 @@
     // TODO: put on seperate queue with spinner
     UIViewController *vc = self.revealViewController.frontViewController;
     UIViewController *vcc = [(UINavigationController *)vc topViewController];
-    [(SearchCollectionViewController *)vcc setRecipes:[YummlyFetch topRecipesForSearch:searchString]];
+    int maxResults = YUMMLY_SEARCH_MAX_RESULTS;
+    int startItem = YUMMLY_SEARCH_START_NUMBER;
+    [(SearchCollectionViewController *)vcc setRecipes:[YummlyFetch topRecipesForSearch:searchString withMaxResultsPerPage:maxResults startingAtItem:startItem]];
     
 }
 @end
