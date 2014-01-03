@@ -52,6 +52,7 @@
 -(void)refreshWebView
 {
     NSURL *url = [NSURL URLWithString:self.recipeURL];
+    NSLog(@"url %@", url);
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
