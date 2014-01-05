@@ -12,8 +12,8 @@
 #define YUMMLY_SEARCH_URL @"http://api.yummly.com/v1/api/recipes?_"
 #define YUMMLY_ALLERGY_URL @"http://api.yummly.com/v1/api/metadata/allergy?_"
 #define YUMMLY_RECIPE_URL @"http://api.yummly.com/v1/api/recipe/";
-#define YUMMLY_SEARCH_MAX_RESULTS @"100";
-#define YUMMLY_SEARCH_START_NUMBER @"0";
+#define YUMMLY_SEARCH_MAX_RESULTS ((int)100);
+#define YUMMLY_SEARCH_START_NUMBER ((int)0);
 #define YUMMLY_ID @"id"
 #define YUMMLY_INGREDIENTS @"ingredients"
 #define YUMMLY_INGREDIENT_LINES @"ingredientLines"
@@ -35,7 +35,7 @@
 
 @interface YummlyFetch : NSObject
 
-+(NSDictionary *)topRecipesForSearch:(NSString *)searchString withMaxResultsPerPage:(NSString *)maxResultsPerPage startingAtItem:(NSString *)startItemNumber;//formated to Yummly, returns dictionary.  maxResultsPerPage and startItemNumber enables paging
++(NSDictionary *)topRecipesForSearch:(NSString *)searchString withMaxResultsPerPage:(int)maxResultsPerPage startingAtItem:(int)startItemNumber;//formated to Yummly, returns dictionary.  maxResultsPerPage and startItemNumber enables paging
 +(NSDictionary *)recipeForID:(NSString *)recipeID; //full recipe, includes url for original site
 +(NSArray *)allergySearchValues; //gets list of all allergy searchValues, use in UI
 

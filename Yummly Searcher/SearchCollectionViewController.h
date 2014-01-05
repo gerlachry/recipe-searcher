@@ -12,7 +12,6 @@
 @interface SearchCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, RecipeViewControllerDelegate>
 
 @property (nonatomic, strong) NSDictionary *recipes; //array of results from search
-@property (nonatomic, strong) UIActivityIndicatorView *spinner;
 @property (nonatomic, strong) NSString *searchString; //search string to fetch from Yummly
 
 @end

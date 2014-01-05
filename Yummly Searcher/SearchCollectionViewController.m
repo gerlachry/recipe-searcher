@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSDictionary *selectedRecipeDetails; //detailed recipe coming back from popover protocol
 @property (weak, nonatomic) IBOutlet UIButton *anchorButton;
 @property (nonatomic, strong) UIPopoverController *recipeViewPopoverController;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -28,7 +29,6 @@
 @synthesize collectionView = _collectionView;
 @synthesize selecteRecipe = _selecteRecipe;
 @synthesize recipeViewPopoverController = _recipeViewPopoverController;
-@synthesize spinner = _spinner;
 @synthesize searchString = _searchString;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -52,6 +52,7 @@
     [self fetchRecipes];
 }
 
+/*
 - (UIActivityIndicatorView *)spinner
 {
     //lazy instantiation
@@ -68,6 +69,7 @@
     }
     return _spinner;
 }
+*/
 
 - (void)viewDidLoad
 {
@@ -94,6 +96,8 @@
     self.revealViewController.rearViewRevealWidth = self.view.frame.size.width/2;
     //NSLog(@"rearwidth %f", self.revealViewController.rearViewRevealWidth);
     //NSLog(@"frontwidth %f", self.view.frame.size.width);
+    [self.spinner stopAnimating];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,9 +110,18 @@
 {
     //Yummly API call
     [self.spinner startAnimating];
-    NSString *max = YUMMLY_SEARCH_MAX_RESULTS;
-    NSString *start = YUMMLY_SEARCH_START_NUMBER;
-    self.recipes = [YummlyFetch topRecipesForSearch:self.searchString withMaxResultsPerPage:max startingAtItem:start];
+    NSLog(@"spinner started");
+    dispatch_queue_t downloadQueue = dispatch_queue_create("downloadRecipes", NULL);
+    dispatch_async(downloadQueue, ^{
+        int max = YUMMLY_SEARCH_MAX_RESULTS;
+        int start = YUMMLY_SEARCH_START_NUMBER;
+        self.recipes = [YummlyFetch topRecipesForSearch:self.searchString withMaxResultsPerPage:max startingAtItem:start];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+            [self.spinner stopAnimating];
+        });
+    });
+   
 }
 
 #pragma mark - collection view data source
