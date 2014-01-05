@@ -110,7 +110,6 @@
 {
     //Yummly API call
     [self.spinner startAnimating];
-    NSLog(@"spinner started");
     dispatch_queue_t downloadQueue = dispatch_queue_create("downloadRecipes", NULL);
     dispatch_async(downloadQueue, ^{
         int max = YUMMLY_SEARCH_MAX_RESULTS;

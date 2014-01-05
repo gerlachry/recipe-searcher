@@ -12,6 +12,7 @@
 @interface RecipeViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *ingredientsTextView;
 @property (nonatomic, strong) NSDictionary *currentRecipeDetails;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -35,6 +36,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.ingredientsTextView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"antique_paper.jpg"]];
+    [self.spinner stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,13 +54,13 @@
 -(void) refreshRecipe
 {
     if(self.recipe) {
-        //TODO : start spinner, download recipe details via yummly api, update UI, stop spinner
-        //self.ingredientsTextView.text = [[self.recipe valueForKeyPath:<#(NSString *)#>]]
+        [self.spinner startAnimating];
         dispatch_queue_t downloadQueue = dispatch_queue_create("download", NULL);
         dispatch_async(downloadQueue, ^{
             self.currentRecipeDetails = [YummlyFetch recipeForID:[self.recipe valueForKey:YUMMLY_ID]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.ingredientsTextView.text = [[self.currentRecipeDetails valueForKey:YUMMLY_INGREDIENT_LINES] componentsJoinedByString:@",\n"];
+                [self.spinner stopAnimating];
             });
         });
         
