@@ -14,6 +14,7 @@
 
 @interface SearchViewController () <UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) NSString *searchString;
 
 @end
 
@@ -21,7 +22,8 @@
 
 @synthesize allergySearchValues = _allergySearchValues;
 @synthesize searchBar = _searchBar;
-
+@synthesize spinner = _spinner;
+@synthesize searchString = _searchString;
 
 - (void)viewDidLoad
 {
@@ -44,20 +46,43 @@
     [super didReceiveMemoryWarning];
 }
 
+- (UIActivityIndicatorView *)spinner
+{
+    //lazy instantiation
+    if (!_spinner) {
+        _spinner =[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
+                   UIActivityIndicatorViewStyleGray];
+        _spinner.hidesWhenStopped=YES;
+        //put spinner on navigation bar, added array of buttons (Visit/unvisit and spinner)
+        NSArray *rightButtons =  self.navigationItem.rightBarButtonItems;
+        NSMutableArray *mutableRightButtons = [rightButtons mutableCopy];
+        int count = [mutableRightButtons count];
+        [mutableRightButtons insertObject:[[UIBarButtonItem alloc] initWithCustomView:_spinner] atIndex:count];
+        self.navigationItem.rightBarButtonItems = mutableRightButtons;
+    }
+    return _spinner;
+}
+
 -(void)loadAllergySearchValues
 {
     //get allergens from yummly, array of dictionaries
+    //TODO : store allergens in user defaults and only update when there is a change, Yummly API has last mod date to utilize
+    [self.spinner startAnimating];
+    dispatch_queue_t downloadQueue = dispatch_queue_create("downloadAllergens", NULL);
+    dispatch_async(downloadQueue, ^{
+        NSArray *allergens = [YummlyFetch allergySearchValues];
+        NSMutableArray *mutableAllergens = [allergens mutableCopy];
+        //add switch to each dictionary object in array to keep track of toggle switches
+        for (NSMutableDictionary *dict in mutableAllergens){
+            [dict setObject:YUMMLY_ALLERGY_SWITCH_OFF forKey:YUMMLY_ALLERGY_SWITCH];
+        }
+        self.allergySearchValues = mutableAllergens;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self.spinner stopAnimating];
+        });
+    });
     
-    NSArray *allergens = [YummlyFetch allergySearchValues];
-    NSMutableArray *mutableAllergens = [allergens mutableCopy];
-    //add switch to each dictionary object in array to keep track of toggle switches
-    for (NSMutableDictionary *dict in mutableAllergens){
-        [dict setObject:YUMMLY_ALLERGY_SWITCH_OFF forKey:YUMMLY_ALLERGY_SWITCH];
-    }
-    self.allergySearchValues = mutableAllergens;
-    
-    //self.allergySearchValues = [YummlyFetch allergySearchValues];
-    //NSLog(@"allergySearchValues = %@",self.allergySearchValues);
 }
 
 #pragma mark - Table view data source
@@ -99,45 +124,6 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -165,7 +151,7 @@
 
 -(void)cancelPressed
 {
-    //  clear the search bar and all the switches and the results on front view if any
+    //  TODO: clear the search bar and all the switches and the results if any
     NSLog(@"cancel pressed");
 }
 
@@ -181,14 +167,12 @@
             searchString = [searchString stringByAppendingString:[NSString stringWithFormat:@"&allowedAllergy[]=%@",searchValue]];
         }
     }
+    self.searchString = searchString;
     NSLog(@"searchString %@", searchString);
-    //set collection view data source to the results of this call
-    // TODO: put on seperate queue with spinner
+    
     UIViewController *vc = self.revealViewController.frontViewController;
     UIViewController *vcc = [(UINavigationController *)vc topViewController];
-    int maxResults = YUMMLY_SEARCH_MAX_RESULTS;
-    int startItem = YUMMLY_SEARCH_START_NUMBER;
-    [(SearchCollectionViewController *)vcc setRecipes:[YummlyFetch topRecipesForSearch:searchString withMaxResultsPerPage:maxResults startingAtItem:startItem]];
+    [(SearchCollectionViewController *)vcc setSearchString:self.searchString];
     
 }
 @end

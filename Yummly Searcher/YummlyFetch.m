@@ -11,15 +11,15 @@
 
 @implementation YummlyFetch
 
-+(NSDictionary *)topRecipesForSearch:(NSString *)searchString withMaxResultsPerPage:(int)maxResultsPerPage startingAtItem:(int)startItemNumber
++(NSDictionary *)topRecipesForSearch:(NSString *)searchString withMaxResultsPerPage:(NSString *)maxResultsPerPage startingAtItem:(NSString *)startItemNumber
 {
-    int maxResults = maxResultsPerPage;
+    int maxResults = (int)maxResultsPerPage;
     if (!maxResults || maxResults < 1) {
-        maxResults = YUMMLY_SEARCH_MAX_RESULTS;
+        maxResults = (int)YUMMLY_SEARCH_MAX_RESULTS;
     }
-    int startItem = startItemNumber;
+    int startItem = (int)startItemNumber;
     if (!startItem || startItem < 1){
-        startItem = YUMMLY_SEARCH_START_NUMBER;
+        startItem = (int)YUMMLY_SEARCH_START_NUMBER;
     }
     
     NSString *query = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%d%@%d",YUMMLY_SEARCH_URL,@"app_id=",YUMMLY_APP,@"&_app_key=",YUMMLY_API_KEY,@"&q=",searchString,@"&maxResult=",maxResults,@"&start=",startItem];

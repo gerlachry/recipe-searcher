@@ -28,6 +28,8 @@
 @synthesize collectionView = _collectionView;
 @synthesize selecteRecipe = _selecteRecipe;
 @synthesize recipeViewPopoverController = _recipeViewPopoverController;
+@synthesize spinner = _spinner;
+@synthesize searchString = _searchString;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,9 +42,31 @@
 
 -(void)setRecipes:(NSDictionary *)recipes
 {
-    //NSLog(@"recipes %@", recipes);
     _recipes = recipes;
     [self.collectionView reloadData];
+}
+
+-(void)setSearchString:(NSString *)searchString
+{
+    _searchString = searchString;
+    [self fetchRecipes];
+}
+
+- (UIActivityIndicatorView *)spinner
+{
+    //lazy instantiation
+    if (!_spinner) {
+        _spinner =[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
+                   UIActivityIndicatorViewStyleGray];
+        _spinner.hidesWhenStopped=YES;
+        //put spinner on navigation bar, added array of buttons (Visit/unvisit and spinner)
+        NSArray *rightButtons =  self.navigationItem.rightBarButtonItems;
+        NSMutableArray *mutableRightButtons = [rightButtons mutableCopy];
+        int count = [mutableRightButtons count];
+        [mutableRightButtons insertObject:[[UIBarButtonItem alloc] initWithCustomView:_spinner] atIndex:count];
+        self.navigationItem.rightBarButtonItems = mutableRightButtons;
+    }
+    return _spinner;
 }
 
 - (void)viewDidLoad
@@ -76,6 +100,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)fetchRecipes
+{
+    //Yummly API call
+    [self.spinner startAnimating];
+    NSString *max = YUMMLY_SEARCH_MAX_RESULTS;
+    NSString *start = YUMMLY_SEARCH_START_NUMBER;
+    self.recipes = [YummlyFetch topRecipesForSearch:self.searchString withMaxResultsPerPage:max startingAtItem:start];
 }
 
 #pragma mark - collection view data source

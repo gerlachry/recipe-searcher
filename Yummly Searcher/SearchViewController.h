@@ -11,5 +11,6 @@
 @interface SearchViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *allergySearchValues; //from yummly api
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
 
 @end
