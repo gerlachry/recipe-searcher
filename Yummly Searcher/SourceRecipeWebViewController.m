@@ -8,8 +8,9 @@
 
 #import "SourceRecipeWebViewController.h"
 
-@interface SourceRecipeWebViewController ()
+@interface SourceRecipeWebViewController () <NSURLConnectionDataDelegate>
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
+@property (nonatomic, strong) NSMutableData *data;
 @end
 
 @implementation SourceRecipeWebViewController
@@ -17,6 +18,7 @@
 @synthesize webView = _webView;
 @synthesize recipeURL = _recipeURL;
 @synthesize spinner = _spinner;
+@synthesize data = _data;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,36 +33,44 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    //self.webView.delegate = self;
 
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(NSMutableData *)data
 {
-    [self refreshWebView];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if(!_data) {
+        _data = [[NSMutableData alloc] init];
+    }
+    return _data;
+    
 }
 
 -(void)setRecipeURL:(NSString *)recipeURL
 {
     _recipeURL = recipeURL;
+    NSURL *url = [NSURL URLWithString:self.recipeURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.spinner startAnimating];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
 }
 
 - (UIActivityIndicatorView *)spinner
 {
     //lazy instantiation
     if (!_spinner) {
-        NSLog(@"creating spinner");
         _spinner =[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
                    UIActivityIndicatorViewStyleGray];
         _spinner.hidesWhenStopped=YES;
         //put spinner on navigation bar
         NSArray *rightButtons =  self.navigationItem.rightBarButtonItems;
-        NSMutableArray *mutableRightButtons = [rightButtons mutableCopy];
+        NSMutableArray *mutableRightButtons;
+        if(rightButtons){
+            mutableRightButtons = [rightButtons mutableCopy];
+        } else {
+            mutableRightButtons = [[NSMutableArray alloc] initWithCapacity:1];
+        }
         int count = [mutableRightButtons count];
         [mutableRightButtons insertObject:[[UIBarButtonItem alloc] initWithCustomView:_spinner] atIndex:count];
         self.navigationItem.rightBarButtonItems = mutableRightButtons;
@@ -68,31 +78,52 @@
     return _spinner;
 }
 
--(void)refreshWebView
-{
-    //TODO : loadRequest investigation, looks like it is already an asyn method...
-    [self.spinner startAnimating];
-    NSLog(@"spinner started");
-    NSURL *url = [NSURL URLWithString:self.recipeURL];
-    NSLog(@"url %@", url);
-    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+#pragma mark NSURLConnectionDataDelegate methods
 
-    /*
-    dispatch_queue_t downloadQueue = dispatch_queue_create("downloadURL", NULL);
-    dispatch_async(downloadQueue, ^{
-        NSURL *url = [NSURL URLWithString:self.recipeURL];
-        NSLog(@"url %@", url);
-        [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.spinner stopAnimating];
-            NSLog(@"spinner stopped");
-        });
-    });
-     */
-    
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.data appendData:data];
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSString *html = [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding];
+    [self.webView loadHTMLString:html baseURL:Nil];
+    connection = Nil;
+    [self.spinner stopAnimating];
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
