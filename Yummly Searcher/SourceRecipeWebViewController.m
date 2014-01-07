@@ -7,9 +7,11 @@
 //
 
 #import "SourceRecipeWebViewController.h"
+#import "TFHpple.h"
 
 @interface SourceRecipeWebViewController () <NSURLConnectionDataDelegate>
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
+@property (nonatomic, strong) NSURLConnection *connection;
 @property (nonatomic, strong) NSMutableData *data;
 @end
 
@@ -18,6 +20,7 @@
 @synthesize webView = _webView;
 @synthesize recipeURL = _recipeURL;
 @synthesize spinner = _spinner;
+@synthesize connection = _connection;
 @synthesize data = _data;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -52,8 +55,7 @@
     NSURL *url = [NSURL URLWithString:self.recipeURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.spinner startAnimating];
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
+    self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 - (UIActivityIndicatorView *)spinner
@@ -88,10 +90,30 @@
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSString *html = [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding];
-    [self.webView loadHTMLString:html baseURL:Nil];
-    connection = Nil;
-    [self.spinner stopAnimating];
+    dispatch_queue_t downloadQueue = dispatch_queue_create("downloadURL", NULL);
+    dispatch_async(downloadQueue, ^{
+        [self.webView loadHTMLString:html baseURL:Nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.spinner stopAnimating];
+        });
+    });
 }
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"error : %@ downloading url %@", self.recipeURL, error);
+}
+//class="body-b instruction-data checklist-item-data
+
+- (IBAction)clipPressed:(UIBarButtonItem *)sender
+{
+    TFHpple *parser = [TFHpple hppleWithHTMLData:self.data];
+    //TODO : this works for martha stewart website, need to add bunch of logic for others then provide a copy and paste mechanism
+    NSString *path = @"//p[@class='body-b instruction-data checklist-item-data']";
+    NSArray *directionsNodes = [parser searchWithXPathQuery:path];
+    NSLog(@"directionsNodes = %@", directionsNodes);
+}
+
 
 @end
 

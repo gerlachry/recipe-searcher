@@ -129,7 +129,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dtW-tg-wOW">
-                                    <size key="itemSize" width="359" height="81"/>
+                                    <size key="itemSize" width="359" height="68"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -140,10 +140,10 @@
                                 </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" reuseIdentifier="RecipeCell2" id="nym-eg-xvQ" customClass="RecipeCollectionCell">
-                                        <rect key="frame" x="0.0" y="64" width="359" height="81"/>
+                                        <rect key="frame" x="0.0" y="64" width="359" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipe_card.jpg" id="rDl-K5-kk8">
@@ -151,13 +151,13 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RecipeName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EH3-Bk-n2I">
-                                                    <rect key="frame" x="20" y="6" width="359" height="21"/>
+                                                    <rect key="frame" x="0.0" y="6" width="379" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Ingredients" selectable="NO" id="OKd-S0-6md">
-                                                    <rect key="frame" x="20" y="26" width="275" height="49"/>
+                                                    <rect key="frame" x="20" y="26" width="275" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -262,7 +262,13 @@
                             </webView>
                         </subviews>
                     </view>
-                    <navigationItem key="navigationItem" id="Ksg-UD-kDu"/>
+                    <navigationItem key="navigationItem" id="Ksg-UD-kDu">
+                        <barButtonItem key="rightBarButtonItem" title="Clip" id="EPS-99-sZn">
+                            <connections>
+                                <action selector="clipPressed:" destination="Rrv-RL-acm" id="J8j-bg-rj4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="xcd-ys-DNS" id="bP4-mm-DQA"/>
                     </connections>
